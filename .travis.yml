@@ -13,6 +13,9 @@ cache:
   directories:
     - $HOME/.npm
 
+script:
+  - npm test
+
 env:
   global:
     # See https://git.io/vdao3 for details.
