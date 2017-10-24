@@ -1,7 +1,4 @@
-# csci45000-team-1-ui
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+# CSCI 45000 Team-1 ui
 
 ## Prerequisites
 
@@ -14,8 +11,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd csci45000-team-1-ui`
+* `git clone https://github.com/450-team-1/frontend-ui.git`
+* `cd frontend-ui`
 * `npm install`
 
 ## Running / Development
@@ -24,28 +21,40 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+There are multiple different test commands you can invoke that will run different levels of tests
 
-### Building
+* `ember test` - Runs all style guides as well as Unit, Integration, and Acceptance Tests and outputs results to the command line
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+* `ember test --server` - Runs all style guides as well as Unit, Integration, and Acceptance Tests and outputs the results to a webpage
 
-### Deploying
+* `npm run pre-push-test` - This script runs only style guides and units tests. Runs automatically whenever you attempt to push to github
 
-Specify what it takes to deploy your app.
+* `npm run test-with-coverage` - Runs `ember test` with the code coverage option turned on. Outputs the code coverage results to the `coverage/` folder in HTML format
+
+* `npm run test-ci` - Runs the tests in random order (good for catching poorly written test cases). Automatically run by Travis-CI on every pull request
 
 ## Further Reading / Useful Links
 
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* [ember.js](https://emberjs.com/) - Framework docs
+* [ember-cli](https://ember-cli.com/) - CLI docs
+* [ember observer](https://emberobserver.com/) - List of open source Ember plugins
+* [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi) - Provides some extra debugging help
+
+## Github Workflow Guidelines
+
+We will use the same guidelines as [the backend team](https://github.com/450-team-1/server-api/wiki/Github-Workflow-Standards)
+
+## Style Guides
+
+To help maintain consistent code and promote best practices we are using the following plugins/libraries
+* [eslint](https://eslint.org) - General javascript best practices
+* [eslint-plugin-ember-suave](https://github.com/DockYard/eslint-plugin-ember-suave) - Ember specific js rules
+* [ember-cli-template-lint](https://github.com/rwjblue/ember-cli-template-lint) - For best practices in handlebars (.hbs) files
+
+### Shortcuts to the Rules Enforced By Each
+
+* [eslint rules](https://eslint.org/docs/rules/)
+* [ember suave rules](https://github.com/DockYard/styleguides/tree/master/engineering)
+* [ember-template-lint rules](https://github.com/rwjblue/ember-template-lint/blob/master/docs/rules.md)
