@@ -1,0 +1,12 @@
+/dist
+/tests
+/tmp
+**/.gitkeep
+.editorconfig
+.ember-cli
+.gitignore
+.eslintrc.js
+.watchmanconfig
+.travis.yml
+ember-cli-build.js
+testem.js
