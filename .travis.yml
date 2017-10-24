@@ -14,7 +14,7 @@ cache:
     - $HOME/.npm
 
 script:
-  - npm test
+  - npm run test-ci
 
 env:
   global:
