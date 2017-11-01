@@ -21,6 +21,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    gatekeeper: {
+      baseUrl: '/api',
+      signInRoute: 'login',
+      startRoute: 'index',
+
+      tokenOptions: {
+        client_id: '59ee923e1fd71c2ae68ade62'
+      }
     }
   };
 
