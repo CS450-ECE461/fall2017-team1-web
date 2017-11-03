@@ -36,11 +36,11 @@ export default function() {
     return new Response(403, { }, { errors: ['Invalid Username or Password'] });
   });
 
-  this.post('/oauth2/logout', () => {
+  this.post('/oauth2/logout', function() {
     return new Response(200, {}, {});
   });
 
-  this.get('/accounts', (schema) => {
+  this.get('/accounts', function(schema) {
     return schema.accounts.find(1);
   });
 }
