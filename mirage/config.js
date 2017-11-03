@@ -26,7 +26,7 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
 
-  this.post('/oauth2/token', (schema, request) => {
+  this.post('/oauth2/token', function(schema, request) {
     let { username, password } = JSON.parse(request.requestBody);
 
     if (username === 'John Smith' && password === 'test1234') {
