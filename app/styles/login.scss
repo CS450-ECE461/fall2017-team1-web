@@ -1,0 +1,57 @@
+.logo-container {
+  height: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-bottom: 50px;
+}
+
+.login-form-container {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in-form-vertical {
+  display: flex;
+  width: 100vw;
+
+  .mdl-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+
+    > div {
+      display: flex;
+      width: 80%;
+    }
+
+    .mdl-button {
+      width: 100%;
+      border-radius: 25px;
+      height: 45px;
+    }
+
+    .mdl-textfield__label {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .mdl-textfield {
+      padding-bottom: 5px;
+    }
+
+    .mdl-textfield__input {
+      border-bottom-width: 4px;
+      height: 30px;
+    }
+  }
+}

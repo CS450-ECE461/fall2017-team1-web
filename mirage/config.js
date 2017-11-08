@@ -26,7 +26,7 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
 
-  this.post('/oauth2/token', (schema, request) => {
+  this.post('/oauth2/token', function(schema, request) {
     let { username, password } = JSON.parse(request.requestBody);
 
     if (username === 'John Smith' && password === 'test1234') {
@@ -36,11 +36,11 @@ export default function() {
     return new Response(403, { }, { errors: ['Invalid Username or Password'] });
   });
 
-  this.post('/oauth2/logout', () => {
+  this.post('/oauth2/logout', function() {
     return new Response(200, {}, {});
   });
 
-  this.get('/accounts', (schema) => {
+  this.get('/accounts', function(schema) {
     return schema.accounts.find(1);
   });
 }
