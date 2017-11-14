@@ -6,14 +6,19 @@ You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
+* [Bower](https://bower.io/)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
-* `git clone https://github.com/450-team-1/frontend-ui.git`
-* `cd frontend-ui`
+* `git clone git@github.com:CS450-ECE461/fall2017-team1-web.git`
+* `cd fall2017-team1-web`
+* `bower install`
 * `npm install`
+
+Linux systems may have trouble completing npm install because of permissions issues. The current workaround is to use the command:
+`sudo chown -R $(whoami) [path/to]/fall2017-team1-web/node_modules`
 
 ## Running / Development
 
