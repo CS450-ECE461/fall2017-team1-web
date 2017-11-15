@@ -2,9 +2,75 @@
 @import "routes";
 @import "login";
 
+$bm-transition-duration: 0.3s;
+$bm-overlay-background: rgba(0, 0, 0, 0.1);
+
+@import 'ember-burger-menu';
+
+.ember-burger-menu {
+  .bm-menu {
+    background-color: #0fcaca;
+    width: 250px !important;
+
+    .bm-menu-header {
+      height: 85px;
+    }
+
+    .bm-menu-item {
+      margin-left: 10px;
+      margin-right: 10px;
+      transition-delay: 0s;
+      width: calc(100% - 20px);
+      display: flex;
+      justify-content: center;
+      height: 75px;
+      align-items: center;
+      font-size: 30px;
+      border-top: 1px solid white;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 body {
   > div {
     height: 100vh;
   }
+}
+
+.bm-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-bar {
+  flex: 0 0 65px;
+  background-color: #ff5600;
+
+  .menu-toggle {
+    position: absolute;
+    font-size: 22px;
+    width: 40px;
+    height: 35px;
+  }
+
+  .icon-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.main-content {
+  flex: 1 1 auto;
+}
+
+.bm-menu-item-container {
+  display: flex;
+  flex-direction: column;
 }

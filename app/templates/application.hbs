@@ -1,1 +1,46 @@
-{{outlet}}
+{{#if inMainApp}}
+  {{#burger-menu as |burger|}}
+    {{#burger.menu itemTagName="div" as |menu|}}
+      <div class="bm-menu-header">
+        <button class="fa fa-times" {{action burger.state.actions.close}}></button>
+      </div>
+
+      <div class="bm-menu-item-container">
+        {{#menu.item dismissOnClick=true}}
+          {{link-to 'Profile' 'profile'}}
+        {{/menu.item}}
+
+        {{#menu.item dismissOnClick=true}}
+          {{link-to 'Feelings' 'match'}}
+        {{/menu.item}}
+
+        {{#menu.item dismissOnClick=true}}
+          {{link-to 'Friends' 'friends'}}
+        {{/menu.item}}
+
+        {{#menu.item dismissOnClick=true}}
+          {{link-to 'Messages' 'messages'}}
+        {{/menu.item}}
+
+        {{#menu.item dismissOnClick=true}}
+          {{link-to 'Settings' 'settings'}}
+        {{/menu.item}}
+      </div>
+    {{/burger.menu}}
+
+    {{#burger.outlet}}
+      <div class="header-bar">
+        <button class="fa fa-bars menu-toggle" {{action burger.state.actions.toggle}}></button>
+        <div class="icon-container">
+          <label>Supdog</label>
+        </div>
+      </div>
+      <div class="main-content">
+        {{outlet}}
+      </div>
+    {{/burger.outlet}}
+  {{/burger-menu}}
+
+{{else}}
+  {{outlet}}
+{{/if}}

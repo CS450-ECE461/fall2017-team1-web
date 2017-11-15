@@ -4,13 +4,13 @@
   "description": "Front end UI for CSCI-45000 Team 1 Project",
   "license": "MIT",
   "author": "CSCI-45000 Team 1",
-  "repository": "https://github.com/450-team-1/frontend-ui.git",
+  "repository": "https://github.com/CS450-ECE461/fall2017-team1-web.git",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
     "pre-push-test": "ember test --filter='unit'",
     "test": "ember test",
-    "test-ci": "ember exam --split=2 --random",
+    "test-ci": "ember exam --random",
     "test-with-coverage": "COVERAGE=true ember test"
   },
   "pre-push": [
@@ -21,6 +21,7 @@
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-api-actions": "^0.1.7",
+    "ember-burger-menu": "^3.0.0",
     "ember-cli": "~2.16.2",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
@@ -42,6 +43,7 @@
     "ember-data": "~2.16.2",
     "ember-exam": "^0.8.1",
     "ember-export-application-global": "^2.0.0",
+    "ember-font-awesome": "^4.0.0-alpha.13",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.16.0",

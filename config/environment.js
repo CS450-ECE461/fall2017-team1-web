@@ -6,7 +6,7 @@ module.exports = function(environment) {
     modulePrefix: 'csci45000-team-1-ui',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -24,14 +24,18 @@ module.exports = function(environment) {
     },
 
     gatekeeper: {
-      baseUrl: '/api',
+      baseUrl: 'http://localhost:5000/gatekeeper',
       signInRoute: 'login',
       startRoute: 'index',
 
       tokenOptions: {
-        client_id: '59ee923e1fd71c2ae68ade62'
+        client_id: '5a03e9fdd2900e1af884c34f'
       }
     }
+  };
+
+  ENV['ember-cli-mirage'] = {
+    enabled: false
   };
 
   if (environment === 'development') {
@@ -51,6 +55,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    };
   }
 
   if (environment === 'production') {
