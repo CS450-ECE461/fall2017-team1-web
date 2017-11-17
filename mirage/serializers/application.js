@@ -1,4 +1,11 @@
-import { JSONAPISerializer } from 'ember-cli-mirage';
+import { RestSerializer } from 'ember-cli-mirage';
 
-export default JSONAPISerializer.extend({
+export default RestSerializer.extend({
+  keyForAttribute(attr) {
+    return attr;
+  },
+
+  keyForModel(modelName) {
+    return modelName;
+  }
 });

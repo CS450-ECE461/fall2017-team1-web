@@ -14,7 +14,7 @@ export default Model.extend({
   geoLocation: attr(),
   status: attr(),
   birthday: attr(),
-  dog: attr(),
+  dogs: attr(),
   fullName: computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   })

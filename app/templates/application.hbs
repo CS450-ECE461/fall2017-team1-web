@@ -11,7 +11,6 @@
             {{/link-to}}
           {{/menu.item}}
           <div class="other-half">
-            {{log currentUser}}
             <span class="username"><strong>{{currentUser.fullName}}</strong></span>
 
             {{#menu.item dismissOnClick=true}}
@@ -41,17 +40,20 @@
             <span class="my-dogs">My Dogs</span>
           </div>
           <div class="dogs">
-            <div class="dog">
-              {{#menu.item dismissOnClick=true}}
-                {{#link-to "dogs"}}
-                  <img class="dog-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
-                {{/link-to}}
-              {{/menu.item}}
-              <span class="dog-name">Sadie</span>
-              {{#menu.item dismissOnClick=true}}
-                {{link-to "edit" "settings" class="dog-edit"}}
-              {{/menu.item}}
-            </div>
+            {{log currentUser}}
+            {{#each currentUser.dogs as |dog|}}
+              <div class="dog">
+                {{#menu.item dismissOnClick=true}}
+                  {{#link-to "dogs"}}
+                    <img class="dog-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
+                  {{/link-to}}
+                {{/menu.item}}
+                <span class="dog-name">{{dog.firstName}} {{dog.lastName}}</span>
+                {{#menu.item dismissOnClick=true}}
+                  {{link-to "edit" "settings" class="dog-edit"}}
+                {{/menu.item}}
+              </div>
+            {{/each}}
             <div class="dog">
               {{#menu.item class="dog-avatar add-dog" dismissOnClick=true}}
                 {{link-to "" "settings" class="fa fa-plus"}}
