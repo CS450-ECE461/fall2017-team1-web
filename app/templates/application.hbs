@@ -1,42 +1,92 @@
 {{#if inMainApp}}
   {{#burger-menu as |burger|}}
-    {{#burger.menu itemTagName="div" as |menu|}}
+    {{#burger.menu gesturesEnabled=false itemTagName="div" as |menu|}}
       <div class="bm-menu-header">
-        <button class="fa fa-times" {{action burger.state.actions.close}}></button>
+        <button class="fa fa-times close-bm" {{action burger.state.actions.close}}></button>
+
+        <div class="top-half">
+          {{#menu.item class="avatar-container" dismissOnClick=true}}
+            {{#link-to 'profile'}}
+              <img class="bm-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg926.png" alt="avatar">
+            {{/link-to}}
+          {{/menu.item}}
+          <div class="other-half">
+            {{log currentUser}}
+            <span class="username"><strong>{{currentUser.fullName}}</strong></span>
+
+            {{#menu.item dismissOnClick=true}}
+              {{link-to "edit profile" "settings" class="edit-profile"}}
+            {{/menu.item}}
+
+            <div class="badges-friends-container">
+              <div>
+                {{#menu.item class="friends" dismissOnClick=true}}
+                  {{#link-to "friends" class="badges-friends-container-in"}}
+                    <i class="fa fa-user"></i>
+                    <span><strong>34</strong> friends</span>
+                  {{/link-to}}
+                {{/menu.item}}
+              </div>
+
+              <div class="badges-friends-container-in">
+                <i class="fa fa-certificate"></i>
+                <span><strong>16</strong> badges</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-half">
+          <div>
+            <span class="my-dogs">My Dogs</span>
+          </div>
+          <div class="dogs">
+            <div class="dog">
+              {{#menu.item dismissOnClick=true}}
+                {{#link-to "dogs"}}
+                  <img class="dog-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
+                {{/link-to}}
+              {{/menu.item}}
+              <span class="dog-name">Sadie</span>
+              {{#menu.item dismissOnClick=true}}
+                {{link-to "edit" "settings" class="dog-edit"}}
+              {{/menu.item}}
+            </div>
+            <div class="dog">
+              {{#menu.item class="dog-avatar add-dog" dismissOnClick=true}}
+                {{link-to "" "settings" class="fa fa-plus"}}
+              {{/menu.item}}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="bm-menu-item-container">
-        {{#menu.item dismissOnClick=true}}
-          {{link-to 'Profile' 'profile'}}
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "stream" "index"}}
         {{/menu.item}}
 
-        {{#menu.item dismissOnClick=true}}
-          {{link-to 'Feelings' 'match'}}
-        {{/menu.item}}
-
-        {{#menu.item dismissOnClick=true}}
-          {{link-to 'Friends' 'friends'}}
-        {{/menu.item}}
-
-        {{#menu.item dismissOnClick=true}}
-          {{link-to 'Messages' 'messages'}}
-        {{/menu.item}}
-
-        {{#menu.item dismissOnClick=true}}
-          {{link-to 'Settings' 'settings'}}
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "settings" "settings"}}
         {{/menu.item}}
       </div>
     {{/burger.menu}}
 
     {{#burger.outlet}}
       <div class="header-bar">
-        <button class="fa fa-bars menu-toggle" {{action burger.state.actions.toggle}}></button>
-        <div class="icon-container">
-          <label>Supdog</label>
+        <div class="header-edge">
+          <button class="fa fa-bars menu-toggle" {{action burger.state.actions.toggle}}></button>
+        </div>
+        <label>Supdog</label>
+        <div class="header-edge">
+          {{link-to "" "messages" class="fa fa-envelope messages"}}
         </div>
       </div>
       <div class="main-content">
         {{outlet}}
+      </div>
+      <div class="footer">
+        <button>Paw</button>
       </div>
     {{/burger.outlet}}
   {{/burger-menu}}

@@ -47,4 +47,12 @@ export default function() {
   this.get('/gatekeeper/v1/accounts', function(schema) {
     return schema.accounts.find(1);
   });
+
+  this.get('/v1/user/:id', function(schema, request) {
+    let { id } = request.params;
+
+    let user = schema.users.find(id);
+
+    return user;
+  });
 }

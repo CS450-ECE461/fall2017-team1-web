@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('profile');
   this.route('messages');
   this.route('direct-message', { path: '/messages/:user_id' });
+  this.route('dogs');
 });
 
 export default Router;
