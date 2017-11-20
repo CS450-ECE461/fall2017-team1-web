@@ -1,26 +1,29 @@
 export default [
   {
     _id: 10,
+    id: 10,
     firstName: 'Sadie',
     lastName: '',
-    bio: '......',
+    bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
     gender: 'Female',
-    breed: 'Cavalier King Charles Spaniel/Poodle',
-    birthday: 'neva',
+    breed: 'Cavapoo',
+    birthday: '2012-07-15T05:00:00.000Z',
     size: 'small',
     fixed: true,
+    weight: 20,
     vetVerification: ['verified']
   },
   {
     _id: 11,
     firstName: 'Henry',
     lastName: '',
-    bio: '......',
+    bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
     gender: 'Male',
     breed: 'Australian Shepard',
-    birthday: 'yesterday',
+    birthday: '2015-02-24T05:00:00.000Z',
     size: 'medium',
     fixed: true,
+    weight: 25,
     vetVerification: ['verified']
   }
 ];

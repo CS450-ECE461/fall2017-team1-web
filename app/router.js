@@ -11,10 +11,11 @@ Router.map(function() {
   this.route('settings');
   this.route('friends');
   this.route('match');
-  this.route('profile');
   this.route('messages');
   this.route('direct-message', { path: '/messages/:user_id' });
-  this.route('dogs');
+  this.route('dogs', { path: '/dogs/:dog_id' });
+  this.route('registration');
+  this.route('users', { path: '/users/:user_id' });
 });
 
 export default Router;

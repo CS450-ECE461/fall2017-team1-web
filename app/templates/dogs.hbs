@@ -1,1 +1,42 @@
-<h2>Dog Profile</h2>
+<div class="profile-header">
+  <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
+  <span class="name">{{model.firstName}} {{mode.lastName}}</span>
+  <span class="bio">
+    {{model.bio}}
+  </span>
+</div>
+<div class="profile-footer">
+  <div class="info-row">
+    <div class="info-block">
+      <span class="block-header"> Breed </span>
+      <span class="block-body"> <strong>{{model.breed}}</strong> </span>
+    </div>
+    <div class="info-block">
+      <span class="block-header"> Sex </span>
+      <span class="block-body"> {{model.gender}}/ {{model.fixed}} </span>
+    </div>
+    <div class="info-block">
+      <span class="block-header"> Age </span>
+      <span class="block-body"> {{model.age}} years </span>
+    </div>
+    <div class="info-block">
+      <span class="block-header"> Weight </span>
+      <span class="block-body"> {{model.weight}} lbs </span>
+    </div>
+  </div>
+  <div class="info-row">
+    <div class="info-block">
+      <span class="block-header">Energy</span>
+      <span>Progress bar</span>
+    </div>
+
+    <div class="info-block">
+      <span class="block-header">Playful</span>
+      <span>Progress bar</span>
+    </div>
+  </div>
+  <div class="vet-container">
+    <i class="fa fa-plus vet-icon"></i>
+    <span class="vet-certification">Vet Certified</span>
+  </div>
+</div>

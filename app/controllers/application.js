@@ -8,6 +8,6 @@ export default Controller.extend({
   currentUser: computed.alias('user.currentUser'),
 
   inMainApp: computed('currentRouteName', function() {
-    return this.get('currentRouteName') !== 'login';
+    return this.get('currentRouteName') !== 'login' && this.get('currentRouteName') !== 'registration';
   })
 });

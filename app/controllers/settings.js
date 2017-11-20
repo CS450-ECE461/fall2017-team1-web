@@ -1,6 +1,9 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+  storage: service('local-storage'),
+
   ageRange: {
     min: 18,
     max: 100
@@ -17,6 +20,7 @@ export default Controller.extend({
 
   actions: {
     signOut() {
+      this.get('storage').clear();
       this.get('gatekeeper').signOut().then(() => {
         this.replaceRoute('login');
       }).catch(() => {
@@ -25,8 +29,8 @@ export default Controller.extend({
       });
     },
 
-    sliderChanged(value) {
-      console.log(value);
+    settingChanged(settingName, value) {
+      console.log(settingName, 'changed to', value);
     }
   }
 });

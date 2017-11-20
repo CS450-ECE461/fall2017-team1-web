@@ -5,20 +5,24 @@ import moment from 'moment';
 let { Model, attr } = DS;
 
 export default Model.extend({
-  accountId: attr(),
   firstName: attr(),
   lastName: attr(),
-  gender: attr(),
   bio: attr(),
-  homeAddress: attr(),
-  geoLocation: attr(),
-  status: attr(),
+  gender: attr(),
+  breed: attr(),
   birthday: attr(),
-  dog: attr(),
-  fullName: computed('firstName', 'lastName', function() {
-    return `${this.get('firstName')} ${this.get('lastName')}`;
-  }),
+  size: attr(),
+  fixed: attr(),
+  vetVerification: attr(),
+  weight: attr(),
+
   age: computed('birthday', function() {
     return moment().diff(moment(this.get('birthday')), 'years');
+  }),
+
+  fixedStatus: computed('fixed', 'gender', function() {
+    let status = this.get('gender') === 'male' ? 'Neutered' : 'Spayed';
+
+    return this.get('fixed') ? status : `Not ${status}`;
   })
 });

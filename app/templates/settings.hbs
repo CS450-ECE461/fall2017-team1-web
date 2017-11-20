@@ -9,7 +9,7 @@
 
   <div class="settings-row">
     <span>Max Distance</span>
-    {{range-slider step=10 start=startDistance range=distanceRange on-change=(action "sliderChanged")}}
+    {{range-slider step=10 start=startDistance range=distanceRange on-change=(action "settingChanged" "maxDistance")}}
   </div>
 
   <div class="settings-row">
@@ -23,7 +23,7 @@
 
   <div class="settings-row">
     <span>Age Range</span>
-    {{range-slider start=ageStart range=ageRange}}
+    {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
   </div>
 
   <h5>Profile Settings</h5>

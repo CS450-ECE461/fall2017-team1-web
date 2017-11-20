@@ -6,7 +6,7 @@
 
         <div class="top-half">
           {{#menu.item class="avatar-container" dismissOnClick=true}}
-            {{#link-to 'profile'}}
+            {{#link-to 'users' currentUser.id}}
               <img class="bm-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg926.png" alt="avatar">
             {{/link-to}}
           {{/menu.item}}
@@ -40,11 +40,10 @@
             <span class="my-dogs">My Dogs</span>
           </div>
           <div class="dogs">
-            {{log currentUser}}
-            {{#each currentUser.dogs as |dog|}}
+            {{#each currentUser.dog as |dog|}}
               <div class="dog">
                 {{#menu.item dismissOnClick=true}}
-                  {{#link-to "dogs"}}
+                  {{#link-to "dogs" dog._id}}
                     <img class="dog-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
                   {{/link-to}}
                 {{/menu.item}}
@@ -88,7 +87,7 @@
         {{outlet}}
       </div>
       <div class="footer">
-        <button>Paw</button>
+        {{link-to 'paw' 'match'}}
       </div>
     {{/burger.outlet}}
   {{/burger-menu}}

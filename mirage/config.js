@@ -21,7 +21,7 @@ export default function() {
     return new Response(200, {}, {});
   });
 
-  this.get('/gatekeeper/v1/accounts', function(schema) {
+  this.get('/gatekeeper/v1/accounts/me', function(schema) {
     return schema.accounts.find(1);
   });
 
@@ -31,5 +31,13 @@ export default function() {
     let user = schema.users.find(id);
 
     return user;
+  });
+
+  this.get('/v1/dogs/:id', function(schema, request) {
+    let { id } = request.params;
+
+    let dog = schema.dogs.find(id);
+
+    return dog;
   });
 }

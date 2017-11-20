@@ -1,0 +1,74 @@
+@import 'variables';
+
+.profile-header {
+  display: flex;
+  flex: 0 0 300px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+
+  .avatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .name {
+    color: $clr-primary-blue;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+
+  .bio {
+    margin-top: 15px;
+    width: 250px;
+    font-size: 13px;
+  }
+}
+
+.profile-footer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+
+  .info-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 0 0 75px;
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+
+      .block-header {
+        color: $clr-primary-blue;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .block-body {
+        font-size: 11px;
+        text-align: center;
+      }
+    }
+  }
+
+  .vet-container {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    .vet-icon {
+      color: $clr-primary-yellow;
+      font-size: 20px;
+    }
+
+    .vet-certification {
+      font-size: 20px;
+      color: $clr-primary-blue;
+    }
+  }
+}

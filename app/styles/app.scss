@@ -1,17 +1,9 @@
+@import 'variables';
 @import "app-colors";
 @import "routes";
 @import "login";
-
-$bm-transition-duration: 0.3s;
-$bm-overlay-background: rgba(0, 0, 0, 0.1);
-
-$clr-primary-orange: #f4826c;
-$clr-primary-blue: #2fbec0;
-$clr-primary-yellow: #f6c96c;
-
-$clr-secondary-gray: #3d3f3f;
-$clr-secondary-white: #f6f7f8;
-
+@import 'registration';
+@import 'dogs';
 @import 'ember-burger-menu';
 
 .ember-burger-menu {
@@ -229,6 +221,8 @@ body {
 }
 
 .main-content {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
 }
 
@@ -250,4 +244,8 @@ body {
     flex: 0 0 60px;
     justify-content: center;
     align-items: center;
+
+    a {
+      text-decoration: none;
+    }
 }
