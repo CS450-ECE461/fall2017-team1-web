@@ -29,8 +29,8 @@ export default Controller.extend({
       });
     },
 
-    settingChanged(settingName, value) {
-      console.log(settingName, 'changed to', value);
+    settingChanged(/* settingName, value */) {
+      // console.log(settingName, 'changed to', value);
     }
   }
 });

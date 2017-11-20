@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:login', 'Unit | Route | login', {
-
+  needs: ['service:user']
 });
 
 test('it exists', function(assert) {
