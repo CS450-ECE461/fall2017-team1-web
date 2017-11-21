@@ -7,4 +7,6 @@ export default function(server) {
 
   // server.createList('post', 10);
   server.loadFixtures('accounts');
+  server.loadFixtures('dogs');
+  server.loadFixtures('users');
 }

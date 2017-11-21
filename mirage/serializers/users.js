@@ -5,7 +5,11 @@ export default RestSerializer.extend({
     return attr;
   },
 
-  keyForModel() {
-    return 'account';
+  keyForModel(modelName) {
+    return modelName;
+  },
+
+  serialize(object) {
+    return object;
   }
 });

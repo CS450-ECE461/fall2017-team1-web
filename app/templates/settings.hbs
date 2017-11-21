@@ -1,2 +1,52 @@
-<h2> Edit Your Settings </h2>
-<button {{action "signOut"}}>Sign Out</button>
+<div class="settings-container">
+  <h4> Edit Your Settings </h4>
+
+  <h5>Discovery Settings</h5>
+  <div class="settings-row">
+    <span>Location</span>
+    {{input placeholder="Indianapolis, IN"}}
+  </div>
+
+  <div class="settings-row">
+    <span>Max Distance</span>
+    {{range-slider step=10 start=startDistance range=distanceRange on-change=(action "settingChanged" "maxDistance")}}
+  </div>
+
+  <div class="settings-row">
+    <span>Gender</span>
+    <select>
+      <option>Men</option>
+      <option>Women</option>
+      <option>Men & Women</option>
+    </select>
+  </div>
+
+  <div class="settings-row">
+    <span>Age Range</span>
+    {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
+  </div>
+
+  <h5>Profile Settings</h5>
+  <div class="settings-row">
+    <span>Username</span>
+    {{input placeholder="dogglover222"}}
+  </div>
+
+  <div class="settings-row">
+    <span>Password</span>
+    {{input placeholder="************"}}
+  </div>
+
+  <h5>Notifications</h5>
+  <div class="settings-row">
+    <span>New Matches</span>
+    {{x-toggle theme='light'}}
+  </div>
+
+  <div class="settings-row">
+    <span>New Messages</span>
+    {{x-toggle theme='light'}}
+  </div>
+
+  <button {{action "signOut"}}>Sign Out</button>
+</div>
