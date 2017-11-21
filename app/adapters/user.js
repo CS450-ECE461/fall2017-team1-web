@@ -14,6 +14,13 @@ export default RESTAdapter.extend({
     return modelName;
   },
 
+  urlForQuery (query) {
+    if(query.friends)
+    {
+      return `${this.get('host')}/${this.get('namespace')}/${this.get('gatekeeper.currentUser.id')}`;
+    }
+  },
+
   headers: computed('gatekeeper.accessToken', function() {
     let accessToken = this.get('gatekeeper.accessToken.access_token');
     return { Authorization: `Bearer ${accessToken}` };
