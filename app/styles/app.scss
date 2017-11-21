@@ -1,10 +1,11 @@
 @import 'variables';
-@import "app-colors";
-@import "routes";
-@import "login";
+@import 'app-colors';
+@import 'routes';
+@import 'login';
 @import 'registration';
 @import 'dogs';
 @import 'ember-burger-menu';
+@import 'friends';
 
 .ember-burger-menu {
   .bm-menu {

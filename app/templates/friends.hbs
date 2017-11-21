@@ -1,1 +1,10 @@
 <h2>The Friends Page</h2>
+<div class="profile-header">
+{{#each model as |friends|}}
+{{!-- Have backend update friend api to include name and avatar in returned list --}}
+  <div class="friend-entry">
+    <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg926.png" alt="dog-avatar">
+    <span class="name">{{model.fullName}}</span>
+  </div>
+{{/#each}}
+</div>
