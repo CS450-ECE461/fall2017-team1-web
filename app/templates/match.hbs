@@ -9,8 +9,10 @@
     <button class="feeling-entry" {{action "findMatches" "active"}}> active </button>
   </div>
 {{else if loading}}
-  <div>
-    <span> Searching for New Matches...! </span>
+  <div class="loading-container">
+    <div class="loading">
+      <span> Searching for New Matches...! </span>
+    </div>
   </div>
 {{else}}
   <div class="matching-pane">
@@ -19,11 +21,15 @@
       {{#if (eq index currentDogIndex)}}
         <div class="profile-header">
           <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
-          <span class="name">{{dog.fullName}}, {{dog.age}}</span>
+          <div class="name-container">
+            <span class="name">{{dog.fullName}}, {{dog.age}}</span>
+          </div>
           <span class="bio">
             {{dog.bio}}
           </span>
-          <button class="fa fa-chevron-down" {{action "triggerMatch" dog}}></button>
+          <div class="match-button-container">
+            <button class="fa fa-chevron-down" {{action "triggerMatch" dog}}></button>
+          </div>
         </div>
       {{/if}}
     {{/each}}

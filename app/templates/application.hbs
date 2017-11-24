@@ -13,10 +13,6 @@
           <div class="other-half">
             <span class="username"><strong>{{currentUser.fullName}}</strong></span>
 
-            {{#menu.item dismissOnClick=true}}
-              {{link-to "edit profile" "settings" class="edit-profile"}}
-            {{/menu.item}}
-
             <div class="badges-friends-container">
               <div>
                 {{#menu.item class="friends" dismissOnClick=true}}
@@ -48,9 +44,6 @@
                   {{/link-to}}
                 {{/menu.item}}
                 <span class="dog-name">{{dog.firstName}} {{dog.lastName}}</span>
-                {{#menu.item dismissOnClick=true}}
-                  {{link-to "edit" "settings" class="dog-edit"}}
-                {{/menu.item}}
               </div>
             {{/each}}
             <div class="dog">
@@ -63,6 +56,18 @@
       </div>
 
       <div class="bm-menu-item-container">
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "profile" "users" currentUser.id}}
+        {{/menu.item}}
+
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "friends" "friends"}}
+        {{/menu.item}}
+
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "messaging" "messages"}}
+        {{/menu.item}}
+
         {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
           {{link-to "stream" "index"}}
         {{/menu.item}}

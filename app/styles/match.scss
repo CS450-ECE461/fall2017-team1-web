@@ -1,5 +1,37 @@
 @import 'variables';
 
+.matching-pane {
+  display: flex;
+  flex: 1 1 auto;
+
+  .profile-header {
+    flex: 1 1 auto;
+
+    .avatar {
+      height: 310px;
+      width: 310px;
+      border-radius: 20px;
+    }
+  }
+
+  .name-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 35px;
+  }
+
+  .match-button-container {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 40px;
+    align-items: flex-end;
+    padding-bottom: 20px;
+  }
+}
+
 .feeling-header {
   font-size: 30px;
   margin-bottom: 20px;
@@ -20,4 +52,29 @@
   justify-content: space-around;
   padding-bottom: 100px;
   background-color: $clr-primary-orange;
+}
+
+.loading-container {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  height: 300px;
+  width: 300px;
+  background-color: $clr-primary-blue;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  >span {
+    font-size: 25px;
+    color: $clr-secondary-white;
+    text-align: center;
+    line-height: 1.25;
+  }
 }
