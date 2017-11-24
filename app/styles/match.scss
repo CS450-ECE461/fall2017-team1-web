@@ -1,0 +1,23 @@
+@import 'variables';
+
+.feeling-header {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: $clr-secondary-white;
+}
+
+.feeling-entry {
+  font-size: 25px;
+  color: $clr-secondary-white;
+}
+
+.choose-feeling-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 100px;
+  background-color: $clr-primary-orange;
+}

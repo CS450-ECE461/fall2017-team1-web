@@ -11,7 +11,9 @@ export default [
     size: 'small',
     fixed: true,
     weight: 20,
-    vetVerification: ['verified']
+    vetVerification: ['verified'],
+    energy: 'medium',
+    playful: 'high'
   },
   {
     _id: 11,
@@ -24,6 +26,8 @@ export default [
     size: 'medium',
     fixed: true,
     weight: 25,
-    vetVerification: ['verified']
+    vetVerification: ['verified'],
+    energy: 'low',
+    playful: 'averge'
   }
 ];

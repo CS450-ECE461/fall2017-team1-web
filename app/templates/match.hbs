@@ -1,12 +1,32 @@
-<div class="choose-feeling-container">
-  <div class="choose-feeling-label">
-    <label> How is Buddy Feeling Today? </label>
+{{#if (and choosingFeeling (not loading))}}
+  <div class="choose-feeling-container">
+    <span class="paw"></span>
+    <span class="feeling-header"> i'm feeling.. </span>
+    <button class="feeling-entry" {{action "findMatches" "hungry"}}> hungry </button>
+    <button class="feeling-entry" {{action "findMatches" "lazy"}}> lazy </button>
+    <button class="feeling-entry" {{action "findMatches" "adventurous"}}> adventurous </button>
+    <button class="feeling-entry" {{action "findMatches" "playful"}}> playful </button>
+    <button class="feeling-entry" {{action "findMatches" "active"}}> active </button>
   </div>
-  <div class="feeling-options-container">
-    <button> Hungry </button>
-    <button> Playful </button>
-    <button> Adventurous </button>
-    <button> Pampered </button>
-    <button> Lazy </button>
+{{else if loading}}
+  <div>
+    <span> Searching for New Matches...! </span>
   </div>
-</div>
+{{else}}
+  <div class="matching-pane">
+    <button class="fa fa-chevron-left" {{action "prevDog"}} disabled={{prevDisabled}}></button>
+    {{#each dogs as |dog index|}}
+      {{#if (eq index currentDogIndex)}}
+        <div class="profile-header">
+          <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
+          <span class="name">{{dog.fullName}}, {{dog.age}}</span>
+          <span class="bio">
+            {{dog.bio}}
+          </span>
+          <button class="fa fa-chevron-down" {{action "triggerMatch" dog}}></button>
+        </div>
+      {{/if}}
+    {{/each}}
+    <button class="fa fa-chevron-right" {{action "nextDog"}} disabled={{nextDisabled}}></button>
+  </div>
+{{/if}}

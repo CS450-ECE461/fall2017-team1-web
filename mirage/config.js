@@ -40,4 +40,8 @@ export default function() {
 
     return dog;
   });
+
+  this.get('/v1/dogs', function(schema) {
+    return schema.dogs.all();
+  });
 }

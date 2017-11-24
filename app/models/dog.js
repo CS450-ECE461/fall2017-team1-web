@@ -15,6 +15,16 @@ export default Model.extend({
   fixed: attr(),
   vetVerification: attr(),
   weight: attr(),
+  energy: attr(),
+  playful: attr(),
+
+  fullName: computed('firstName', 'lastName', function() {
+    if (this.get('lastName') !== '') {
+      return `${this.get('firstName')} ${this.get('lastName')}`;
+    }
+
+    return this.get('firstName');
+  }),
 
   age: computed('birthday', function() {
     return moment().diff(moment(this.get('birthday')), 'years');
