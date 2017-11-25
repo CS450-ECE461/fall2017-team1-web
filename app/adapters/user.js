@@ -14,9 +14,8 @@ export default RESTAdapter.extend({
     return modelName;
   },
 
-  urlForQuery (query) {
-    if(query.friends)
-    {
+  urlForQuery(query) {
+    if (query.friends) {
       return `${this.get('host')}/${this.get('namespace')}/${this.get('gatekeeper.currentUser.id')}`;
     }
   },

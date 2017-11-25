@@ -3,10 +3,10 @@
 .friends-list{
   display: flex;//use flex
   flex-wrap: wrap;//wrap around when end of row is reached
-  flex 1 1 auto;//expand to fill the space in between header bars
+  flex: 1 1 auto;//expand to fill the space in between header bars
   overflow-y: scroll;//make sure the bottom bit doesn't come up
   .friend-entry{
-    flex 0 0 50%;// do not grow, do not shrink, start at half screen width.    
+    flex: 0 0 50%;// do not grow, do not shrink, start at half screen width.    
     .name{
       color: $clr-primary-blue;
     }
