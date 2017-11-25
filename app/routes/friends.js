@@ -4,10 +4,10 @@ export default Route.extend({
   model(params) {
     return this.get('store').query('user', { friends: true }).then((response) => {
       response.forEach(function(userId) {
-        if (userId == '__v') {
-          // do nothing
+        if (userId.user1 == ${this.get('gatekeeper.currentUser.id')}) {
+          console.log(userId.user2);
         } else {
-          // get image?
+          console.log(userId.user1);
         }
       });
     });
