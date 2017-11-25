@@ -40,4 +40,12 @@ export default function() {
 
     return dog;
   });
+
+  this.get('/v1/friend/:id', function(schema, request) {
+    let { id } = request.params;
+
+    let friend = schema.friends.query(id);
+
+    return friend;
+  });
 }
