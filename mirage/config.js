@@ -44,8 +44,10 @@ export default function() {
   this.get('/v1/friend/:id', function(schema, request) {
     let { id } = request.params;
 
-    let friend = schema.friends.query(id);
+    let friends = schema.friends.where(function(friendRow) {
+		return friendRow.user1 === id || friendRow.user2 === id;
+	});
 
-    return friend;
+    return friends;
   });
 }
