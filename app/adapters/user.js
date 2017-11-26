@@ -9,16 +9,9 @@ export default RESTAdapter.extend({
 
   host: 'http://localhost:5000',
   namespace: 'v1',
-  friend: 'friend',
 
   pathForType(modelName) {
     return modelName;
-  },
-
-  urlForQuery(query) {
-    if (query.friends) {
-      return `${this.get('host')}/${this.get('namespace')}/${this.get('friend')}/${this.get('gatekeeper.currentUser.id')}`;
-    }
   },
 
   headers: computed('gatekeeper.accessToken', function() {

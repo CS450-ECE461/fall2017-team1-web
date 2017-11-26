@@ -8,9 +8,11 @@ export default Service.extend({
   currentUser: null,
 
   loadUserInfo() {
-    let { id } = this.get('gatekeeper.currentUser');
-    this.get('store').findRecord('user', id).then((user) => {
-      this.set('currentUser', user);
-    });
+    if (this.get('gatekeeper.currentUser')) {
+      let { id } = this.get('gatekeeper.currentUser');
+      this.get('store').findRecord('user', id).then((user) => {
+        this.set('currentUser', user);
+      });
+    }
   }
 });

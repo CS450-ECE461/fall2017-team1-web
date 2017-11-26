@@ -11,9 +11,9 @@ export default function() {
     }
 
     return new Response(400, {}, {
-      errors: {
+      errors: [{
         code: 'invalid_username', message: 'Invalid username'
-      }
+      }]
     });
   });
 
