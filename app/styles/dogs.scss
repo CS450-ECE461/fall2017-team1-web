@@ -23,6 +23,7 @@
     margin-top: 15px;
     width: 250px;
     font-size: 13px;
+    text-align: center;
   }
 }
 
@@ -70,5 +71,14 @@
       font-size: 20px;
       color: $clr-primary-blue;
     }
+  }
+}
+
+.progressbar-container {
+  width: 100px;
+
+  svg {
+    border: 1px solid $clr-primary-yellow;
+    border-radius: 3px;
   }
 }

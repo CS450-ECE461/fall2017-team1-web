@@ -1,9 +1,10 @@
-<h2>The Friends Page</h2>
-<div class="profile-header">
-  {{#each model as |friends|}}
+<div class="friends-list">
+  {{#each model as |friend|}}
     <div class="friend-entry">
-      <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg926.png" alt="dog-avatar">
-      <span class="name">{{model.fullName}}</span>
+      {{#link-to 'users' friend.id}}
+        <img class="avatar" src={{friend.avatar}} alt="dog-avatar">
+        <span class="name">{{friend.fullName}}</span>
+      {{/link-to}}
     </div>
   {{/each}}
 </div>

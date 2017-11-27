@@ -1,3 +1,5 @@
+import dogs from './dogs';
+
 export default [
   {
     _id: 1,
@@ -6,51 +8,45 @@ export default [
     lastName: 'Campbell',
     gender: 'male',
     bio: 'Mesh expedite state whereas dynamically has myocardinate inexpensive. Fashion reinvent innovate. Forward, clicks-and-mortar.',
+    avatar: 'https://cs.iupui.edu/~jbcampbe/cpg926.png',
     homeAddress: '1400 Cherry Tree Lane',
     geoLocation: 'here',
     status: 'awake',
     birthday: '1997-09-10T05:00:00.000Z',
     dog: [
-      {
-        _id: 10,
-        firstName: 'Sadie',
-        lastName: '',
-        bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
-        gender: 'Female',
-        breed: 'Cavapoo',
-        birthday: 'neva',
-        size: 'small',
-        fixed: true,
-        weight: 20,
-        vetVerification: ['verified']
-      }
+      dogs[0]
     ]
   },
   {
     _id: 2,
-    accountId: 12423534,
+    accountId: 1240439340,
     firstName: 'Test',
-    lastName: 'Campbell',
+    lastName: 'Singh',
     gender: 'male',
     bio: 'Mesh expedite state whereas dynamically has myocardinate inexpensive. Fashion reinvent innovate. Forward, clicks-and-mortar.',
-    homeAddress: '1400 Cherry Tree Lane',
+    avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
+    homeAddress: '1402 Cherry Tree Lane',
     geoLocation: 'here',
     status: 'awake',
-    birthday: '1997-09-10T05:00:00.000Z',
+    birthday: '1996-05-02T05:00:00.000Z',
     dog: [
-      {
-        _id: 11,
-        firstName: 'Henry',
-        lastName: '',
-        bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
-        gender: 'Male',
-        breed: 'Australian Shepard',
-        birthday: '2015-02-24T05:00:00.000Z',
-        size: 'medium',
-        fixed: true,
-        weight: 25,
-        vetVerification: ['verified']
-      }
+      dogs[1]
+    ]
+  },
+  {
+    _id: 3,
+    accountId: 124349583948,
+    firstName: 'Test',
+    lastName: 'Rupsis',
+    gender: 'male',
+    bio: 'Mesh expedite state whereas dynamically has myocardinate inexpensive. Fashion reinvent innovate. Forward, clicks-and-mortar.',
+    avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
+    homeAddress: '1404 Cherry Tree Lane',
+    geoLocation: 'here',
+    status: 'awake',
+    birthday: '1995-01-15T05:00:00.000Z',
+    dog: [
+      dogs[2]
     ]
   }
 ];

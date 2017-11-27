@@ -11,7 +11,7 @@ export default Route.extend({
         let otherUserId = (userObject.user1 !== this.get('gatekeeper.currentUser.id')) ? userObject.user1 : userObject.user2;
         return this.get('store').find('user', otherUserId);
       });
-      return allSettled(friendPromises);
+      return allSettled(friendPromises).then((friends) => friends.map((friend) => friend.value));
     });
   }
 });

@@ -14,5 +14,9 @@ export default Service.extend({
         this.set('currentUser', user);
       });
     }
+  },
+
+  init() {
+    this.loadUserInfo();
   }
 });

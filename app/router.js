@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('dogs', { path: '/dogs/:dog_id' });
   this.route('registration');
   this.route('users', { path: '/users/:user_id' });
+  this.route('loading');
 });
 
 export default Router;

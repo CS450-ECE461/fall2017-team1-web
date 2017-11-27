@@ -2,20 +2,16 @@
   {{#burger-menu as |burger|}}
     {{#burger.menu gesturesEnabled=false itemTagName="div" as |menu|}}
       <div class="bm-menu-header">
-        <button class="fa fa-times close-bm" {{action burger.state.actions.close}}></button>
+        {{!-- <button class="fa fa-times close-bm" {{action burger.state.actions.close}}></button> --}}
 
         <div class="top-half">
           {{#menu.item class="avatar-container" dismissOnClick=true}}
             {{#link-to 'users' currentUser.id}}
-              <img class="bm-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg926.png" alt="avatar">
+              <img class="bm-avatar" src={{currentUser.avatar}} alt="avatar">
             {{/link-to}}
           {{/menu.item}}
           <div class="other-half">
             <span class="username"><strong>{{currentUser.fullName}}</strong></span>
-
-            {{#menu.item dismissOnClick=true}}
-              {{link-to "edit profile" "settings" class="edit-profile"}}
-            {{/menu.item}}
 
             <div class="badges-friends-container">
               <div>
@@ -44,13 +40,10 @@
               <div class="dog">
                 {{#menu.item dismissOnClick=true}}
                   {{#link-to "dogs" dog._id}}
-                    <img class="dog-avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
+                    <img class="dog-avatar" src={{dog.avatar}} alt="dog-avatar">
                   {{/link-to}}
                 {{/menu.item}}
                 <span class="dog-name">{{dog.firstName}} {{dog.lastName}}</span>
-                {{#menu.item dismissOnClick=true}}
-                  {{link-to "edit" "settings" class="dog-edit"}}
-                {{/menu.item}}
               </div>
             {{/each}}
             <div class="dog">
@@ -63,6 +56,18 @@
       </div>
 
       <div class="bm-menu-item-container">
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "profile" "users" currentUser.id}}
+        {{/menu.item}}
+
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "friends" "friends"}}
+        {{/menu.item}}
+
+        {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
+          {{link-to "messaging" "messages"}}
+        {{/menu.item}}
+
         {{#menu.item class="bm-main-menu-item" dismissOnClick=true}}
           {{link-to "stream" "index"}}
         {{/menu.item}}
