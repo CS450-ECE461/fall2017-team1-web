@@ -45,8 +45,8 @@ export default function() {
     let { id } = request.params;
 
     let friends = schema.friends.where(function(friendRow) {
-  		return friendRow.user1 === id || friendRow.user2 === id;
-  	});
+      return friendRow.user1 === id || friendRow.user2 === id;
+    });
 
     return friends;
   });

@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 import moment from 'moment';
 
-let { Model, attr, hasMany } = DS;
+let { Model, attr } = DS;
 
 export default Model.extend({
   accountId: attr(),

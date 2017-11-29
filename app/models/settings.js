@@ -1,5 +1,7 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+let { Model, attr } = DS;
 
+export default Model.extend({
+  vetVerified: attr()
 });

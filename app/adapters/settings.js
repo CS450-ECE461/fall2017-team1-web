@@ -2,7 +2,6 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-
 let { RESTAdapter } = DS;
 
 export default RESTAdapter.extend({
@@ -16,7 +15,7 @@ export default RESTAdapter.extend({
     return { Authorization: `Bearer ${accessToken}` };
   }),
 
-  buildURL(modelName, id, snapshot, requestType, query) {
+  buildURL() {
     return `${this.get('host')}/${this.get('namespace')}/user/${this.get('gatekeeper.currentUser.id')}/criteria`;
   }
 });

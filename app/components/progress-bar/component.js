@@ -25,13 +25,12 @@ export default Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
     if (this.get('progressbar')) {
-        this.get('progressbar').set(this.get('value'));
+      this.get('progressbar').set(this.get('value'));
     }
   },
-
 
   willDestroyElement() {
     this._super(...arguments);
     this.get('progressbar').destroy();
-  },
+  }
 });

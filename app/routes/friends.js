@@ -3,7 +3,7 @@ import { allSettled } from 'rsvp';
 import $ from 'jquery';
 
 export default Route.extend({
-  model(params) {
+  model() {
     let url = `http://localhost:5000/v1/friend/${this.get('gatekeeper.currentUser.id')}`;
 
     return $.getJSON(url).then((response) => {
