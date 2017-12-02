@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  <span class="divider"></span>
+
   <div class="settings-row">
     <div class="select-row">
       <span>Gender</span>
@@ -24,18 +26,20 @@
     </div>  
   </div>
 
+  <span class="divider"></span>
+
   <div class="settings-row">
     <div class="select-row">
-      <span>I'm Feeling</span>
+      <span>Energy Level</span>
       <select onchange={{action (action "settingChanged" "energyLevel") value="target.value"}}>
-        <option>Hungry</option>
-        <option>Lazy</option>
-        <option>Adventurous</option>
-        <option>Playful</option>
-        <option>Active</option>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
       </select>
     </div>
   </div>
+
+  <span class="divider"></span>
 
   <div class="settings-row">
     <div class="select-row">
@@ -47,12 +51,16 @@
     </div>
   </div>
 
+  <span class="divider"></span>
+
   <div class="settings-row">
     <div class="slider-row">
       <span>Age Range</span>
       {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
     </div>
   </div>
+
+  <span class="divider"></span>
 
   {{!-- <h5>Profile Settings</h5>
   <div class="settings-row">
@@ -76,5 +84,8 @@
     {{x-toggle theme='light'}}
   </div> --}}
   <button> Save </button>
+
+  <span class="divider"></span>
+
   <button {{action "signOut"}}>Sign Out</button>
 </div>
