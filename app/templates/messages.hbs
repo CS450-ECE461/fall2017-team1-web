@@ -1,1 +1,14 @@
-<h2>Messages</h2>
+<div class="conversations-list">
+  {{#each model as |user|}}
+    <div class="conversation">
+      {{#link-to "direct-message" user.id}}
+        <div class="conv">
+          <img class="conversation-avatar" src={{user.avatar}} alt="avatar">
+          <div class="conversation-right-side">
+            <span class="conversation-name">{{user.firstName}} {{user.lastName}}</span>
+          </div>
+        </div>
+      {{/link-to}}
+    </div>
+  {{/each}}
+</div>

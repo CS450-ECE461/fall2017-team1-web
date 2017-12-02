@@ -10,6 +10,7 @@ export default Model.extend({
   lastName: attr(),
   gender: attr(),
   bio: attr(),
+  avatar: attr(),
   homeAddress: attr(),
   geoLocation: attr(),
   status: attr(),

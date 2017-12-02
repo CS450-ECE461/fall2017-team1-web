@@ -1,0 +1,42 @@
+@import 'variables';
+
+.conversations-list {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation {
+  display: flex;
+  flex: 0 0 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-bottom: 1px solid $clr-secondary-gray;
+
+  > a {
+    display: flex;
+    flex: 1 1 auto;
+    text-decoration: none;
+  }
+
+  .conv {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+  }
+
+  .conversation-avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+
+  .conversation-right-side {
+    display: flex;
+    flex: 1 1 auto;
+    padding-left: 10px;
+    padding-top: 15px;
+    height: calc(100% - 45px);
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,67 @@
+.conversation-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex: 0 0 120px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid gray;
+
+  .conversation-avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+}
+
+.conversation-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+
+  .message {
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .message-bubble {
+      display: flex;
+      flex: 1 1 auto;
+      max-width: 200px;
+      background-color: $clr-primary-yellow;
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+      flex: 0 0 auto;
+    }
+
+    // .message-bubble:before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 5px;
+    //   left: -10px;
+    //   border-top: 15px solid $clr-primary-yellow;
+    //   border-left: 15px solid transparent;
+    // }
+
+    &.user-message {
+        justify-content: flex-end;
+
+        .message-bubble {
+          justify-content: flex-end;
+        }
+
+        // .message-bubble:before {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: 5px;
+        //   right: -10px;
+        //   border-bottom: 15px solid $clr-primary-yellow;
+        //   border-right: 15px solid transparent;
+        // }
+    }
+  }
+}

@@ -40,4 +40,18 @@ export default function() {
 
     return dog;
   });
+
+  this.get('/v1/friend/:id', function(schema, request) {
+    let { id } = request.params;
+
+    let friends = schema.friends.where(function(friendRow) {
+      return friendRow.user1 === id || friendRow.user2 === id;
+    });
+
+    return friends;
+  });
+
+  this.get('/v1/dogs', function(schema) {
+    return schema.dogs.all();
+  });
 }

@@ -10,12 +10,12 @@ export default RESTAdapter.extend({
   host: 'http://localhost:5000',
   namespace: 'v1',
 
-  urlForFindRecord(dogId) {
-    return `${this.get('host')}/${this.get('namespace')}/user/${this.get('gatekeeper.currentUser.id')}/dogs/${dogId}`;
-  },
-
   headers: computed('gatekeeper.accessToken', function() {
     let accessToken = this.get('gatekeeper.accessToken.access_token');
     return { Authorization: `Bearer ${accessToken}` };
-  })
+  }),
+
+  buildURL() {
+    return `${this.get('host')}/${this.get('namespace')}/user/${this.get('gatekeeper.currentUser.id')}/criteria`;
+  }
 });

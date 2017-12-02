@@ -9,4 +9,5 @@ export default function(server) {
   server.loadFixtures('accounts');
   server.loadFixtures('dogs');
   server.loadFixtures('users');
+  server.loadFixtures('friends');
 }

@@ -1,1 +1,10 @@
-<h2>The Friends Page</h2>
+<div class="friends-list">
+  {{#each model as |friend|}}
+    <div class="friend-entry">
+      {{#link-to 'users' friend.id}}
+        <img class="avatar" src={{friend.avatar}} alt="dog-avatar">
+        <span class="name">{{friend.fullName}}</span>
+      {{/link-to}}
+    </div>
+  {{/each}}
+</div>

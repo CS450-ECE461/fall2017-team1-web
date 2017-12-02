@@ -1,6 +1,6 @@
 <div class="profile-header">
-  <img class="avatar" src="https://cs.iupui.edu/~jbcampbe/cpg927.png" alt="dog-avatar">
-  <span class="name">{{model.firstName}} {{mode.lastName}}</span>
+  <img class="avatar" src={{model.avatar}} alt="dog-avatar">
+  <span class="name">{{model.firstName}} {{model.lastName}}</span>
   <span class="bio">
     {{model.bio}}
   </span>
@@ -27,12 +27,12 @@
   <div class="info-row">
     <div class="info-block">
       <span class="block-header">Energy</span>
-      <span>Progress bar</span>
+      {{progress-bar value=(convert-to-value model.energy)}}
     </div>
 
     <div class="info-block">
       <span class="block-header">Playful</span>
-      <span>Progress bar</span>
+      {{progress-bar value=(convert-to-value model.playful)}}
     </div>
   </div>
   <div class="vet-container">

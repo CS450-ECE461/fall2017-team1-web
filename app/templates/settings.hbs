@@ -1,11 +1,11 @@
 <div class="settings-container">
   <h4> Edit Your Settings </h4>
 
-  <h5>Discovery Settings</h5>
-  <div class="settings-row">
+  <h5>Match Settings</h5>
+  {{!-- <div class="settings-row">
     <span>Location</span>
     {{input placeholder="Indianapolis, IN"}}
-  </div>
+  </div> --}}
 
   <div class="settings-row">
     <span>Max Distance</span>
@@ -14,10 +14,27 @@
 
   <div class="settings-row">
     <span>Gender</span>
-    <select>
+    <select onchange={{action (action "settingChanged" "gender") value="target.value"}}>
       <option>Men</option>
       <option>Women</option>
       <option>Men & Women</option>
+    </select>
+  </div>
+
+  <div class="settings-row">
+    <span>Energy Levels</span>
+    <select onchange={{action (action "settingChanged" "energyLevel") value="target.value"}}>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+  </div>
+
+  <div class="settings-row">
+    <span>Vet Verified</span>
+    <select onchange={{action (action "settingChanged" "vetVerification") value="target.value"}}>
+      <option>Yes</option>
+      <option>No</option>
     </select>
   </div>
 
@@ -26,7 +43,7 @@
     {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
   </div>
 
-  <h5>Profile Settings</h5>
+  {{!-- <h5>Profile Settings</h5>
   <div class="settings-row">
     <span>Username</span>
     {{input placeholder="dogglover222"}}
@@ -35,9 +52,9 @@
   <div class="settings-row">
     <span>Password</span>
     {{input placeholder="************"}}
-  </div>
+  </div> --}}
 
-  <h5>Notifications</h5>
+  {{!-- <h5>Notifications</h5>
   <div class="settings-row">
     <span>New Matches</span>
     {{x-toggle theme='light'}}
@@ -46,7 +63,7 @@
   <div class="settings-row">
     <span>New Messages</span>
     {{x-toggle theme='light'}}
-  </div>
-
+  </div> --}}
+  <button> Save </button>
   <button {{action "signOut"}}>Sign Out</button>
 </div>

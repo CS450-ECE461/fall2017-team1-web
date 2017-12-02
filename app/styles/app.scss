@@ -1,12 +1,20 @@
 @import 'variables';
-@import "app-colors";
-@import "routes";
-@import "login";
+@import 'app-colors';
+@import 'routes';
+@import 'login';
 @import 'registration';
 @import 'dogs';
+@import 'match';
 @import 'ember-burger-menu';
+@import 'friends';
+@import 'messages';
+@import 'direct-message';
 
 .ember-burger-menu {
+  .bm-content {
+    overflow: hidden;
+  }
+
   .bm-menu {
     display: flex;
     flex-direction: column;
@@ -152,23 +160,6 @@
       font-weight: lighter;
     }
 
-    // .bm-menu-item {
-    //   margin-left: 10px;
-    //   margin-right: 10px;
-    //   transition-delay: 0s;
-    //   width: calc(100% - 20px);
-    //   display: flex;
-    //   justify-content: center;
-    //   height: 75px;
-    //   align-items: center;
-    //   font-size: 30px;
-    //   border-top: 1px solid white;
-
-    //   a {
-    //     text-decoration: none;
-    //   }
-    // }
-
     .bm-menu-item-container {
       display: flex;
       flex-direction: column;
@@ -208,7 +199,11 @@ body {
   .messages {
     font-size: 24px;
     text-decoration: none;
-    color: $clr-secondary-white
+    color: $clr-secondary-white;
+
+    img {
+      height: 30px;
+    }
   }
 
   .header-edge {
@@ -248,4 +243,24 @@ body {
     a {
       text-decoration: none;
     }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.page-loading {
+  display: block;
+  margin: auto;
+  line-height: 100vw;
+  font-size: 112px;
+}
+
+.paw-icon {
+  height: 40px;
+}
+
+.supdog-logo {
+  height: 30px;
 }

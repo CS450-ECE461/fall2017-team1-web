@@ -1,1 +1,14 @@
-<h2>Direct Messages</h2>
+<div class="conversation-header">
+  <img class="conversation-avatar" src={{model.recipient.avatar}} alt="avatar">
+  <span class="name">{{model.recipient.fullName}}</span>
+</div>
+<div class="conversation-body">
+  {{#each model.conversation as |message|}}
+    <div class="message {{if (eq message.from gatekeeper.currentUser.id) 'user-message'}}">
+      <div class="message-bubble">
+        <span>{{message.message}}</span>
+      </div>
+    </div>
+  {{/each}} {{input placeholder="Type a Message" value=message}}
+  <button {{action "sendMessage"}} disabled={{not hasMessage}}> Send </button>
+</div>
