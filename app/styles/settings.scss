@@ -1,0 +1,26 @@
+@import 'variables';
+
+.settings-container {
+  display: flex;//use flex
+  flex-direction: column;
+  align-content: space-between;
+  overflow-y: scroll;//make sure the bottom bit doesn't come up
+  h4 {
+    display: flex;
+    justify-content: center;
+  }
+  .settings-row {
+    span{
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+      padding-bottom: 1%;
+    }
+    .select-row{
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}
