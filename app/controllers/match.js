@@ -35,7 +35,7 @@ export default Controller.extend({
     },
 
     triggerMatch(dog) {
-      console.log('Triggering Match...', dog.id);
+      // console.log('Triggering Match...', dog.id);
     }
   }
 });

@@ -31,7 +31,7 @@ export default Controller.extend({
     },
 
     settingChanged(settingName, value) {
-      console.log(settingName, 'changed to', value);
+      // console.log(settingName, 'changed to', value);
       let json = {};
       if (settingName == 'ageRange') {
         json = {
@@ -44,7 +44,8 @@ export default Controller.extend({
       $.ajax({
         url: `http://localhost:5000/user/${this.get('gatekeeper.currentUser.id')}/criteriaStatus`,
         type: 'PUT',
-        data: json
+        data: json,
+        headers: { Authorization: `Bearer ${this.get('gatekeeper.accessToken.access_token')}` }
       });
     }
   }
