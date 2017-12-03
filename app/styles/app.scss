@@ -200,7 +200,11 @@ body {
   .messages {
     font-size: 24px;
     text-decoration: none;
-    color: $clr-secondary-white
+    color: $clr-secondary-white;
+
+    img {
+      height: 30px;
+    }
   }
 
   .header-edge {
@@ -252,4 +256,12 @@ button {
   margin: auto;
   line-height: 100vw;
   font-size: 112px;
+}
+
+.paw-icon {
+  height: 40px;
+}
+
+.supdog-logo {
+  height: 30px;
 }

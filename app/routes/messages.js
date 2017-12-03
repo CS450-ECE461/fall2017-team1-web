@@ -1,33 +1,17 @@
 import Route from '@ember/routing/route';
+import { allSettled } from 'rsvp';
+import $ from 'jquery';
 
 export default Route.extend({
   model() {
-    return [
-      {
-        id: 2,
-        avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
-        fullName: 'Test Rupsis'
-      },
-      {
-        id: 3,
-        avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
-        fullName: 'Test Singh'
-      },
-      {
-        id: 4,
-        avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
-        fullName: 'Test Farkas'
-      },
-      {
-        id: 5,
-        avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
-        fullName: 'Test Alhazzani'
-      },
-      {
-        id: 6,
-        avatar: 'https://cs.iupui.edu/~jbcampbe/person.svg',
-        fullName: 'Test Haskins'
-      }
-    ];
+    let url = `http://localhost:5000/v1/friend/${this.get('gatekeeper.currentUser.id')}`;
+
+    return $.getJSON(url).then((response) => {
+      let friendPromises = response.map((userObject) => {
+        let otherUserId = (userObject.user1 !== this.get('gatekeeper.currentUser.id')) ? userObject.user1 : userObject.user2;
+        return this.get('store').find('user', otherUserId);
+      });
+      return allSettled(friendPromises).then((friends) => friends.map((friend) => friend.value));
+    });
   }
 });

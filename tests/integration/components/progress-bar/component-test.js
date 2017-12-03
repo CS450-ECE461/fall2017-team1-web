@@ -6,19 +6,7 @@ moduleForComponent('progress-bar', 'Integration | Component | progress bar', {
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{progress-bar}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#progress-bar}}
-      template block text
-    {{/progress-bar}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

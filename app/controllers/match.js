@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
+import $ from 'jquery';
 
 export default Controller.extend({
   choosingFeeling: true,
@@ -20,8 +21,11 @@ export default Controller.extend({
       this.set('loading', true);
       this.set('choosingFeeling', false);
 
-      this.get('store').query('dog', { matchType }).then((response) => {
-        this.set('dogs', response);
+      $.ajax({
+        url: `http://localhost:5000/user/${this.get('gatekeeper.currentUser.id')}/criteria`,
+        type: 'PUT',
+        data: { status: matchType }
+      }).then(() => {
         this.set('loading', false);
       });
     },
@@ -34,9 +38,8 @@ export default Controller.extend({
       this.incrementProperty('currentDogIndex', -1);
     },
 
-    triggerMatch(dog) {
-      return dog;
-      // console.log('Triggering Match...', dog.id);
+    triggerMatch() {
+
     }
   }
 });

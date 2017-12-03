@@ -8,10 +8,10 @@ moduleForComponent('convert-to-value', 'helper:convert-to-value', {
 
 // Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('inputValue', 'high');
 
   this.render(hbs`{{convert-to-value inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), 1);
 });
 

@@ -81,18 +81,24 @@
     {{#burger.outlet}}
       <div class="header-bar">
         <div class="header-edge">
-          <button class="fa fa-bars menu-toggle" {{action burger.state.actions.toggle}}></button>
+          <button class="menu-toggle" {{action burger.state.actions.toggle}}>
+            <img src="http://cs.iupui.edu/~jbcampbe/burger.svg" alt="open-menu">
+          </button>
         </div>
-        <label>Supdog</label>
+        <img class="supdog-logo" src="http://cs.iupui.edu/~jbcampbe/logo.svg" alt="logo">
         <div class="header-edge">
-          {{link-to "" "messages" class="fa fa-envelope messages"}}
+          {{#link-to "messages" class="messages"}}
+            <img src="https://cs.iupui.edu/~jbcampbe/mail.svg" alt="mail-icon">
+          {{/link-to}}
         </div>
       </div>
       <div class="main-content">
         {{outlet}}
       </div>
       <div class="footer">
-        {{link-to 'paw' 'match'}}
+        {{#link-to 'match'}}
+          <img class="paw-icon" src="http://cs.iupui.edu/~jbcampbe/paw.svg" alt="paw-icon">
+        {{/link-to}}
       </div>
     {{/burger.outlet}}
   {{/burger-menu}}
