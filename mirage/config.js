@@ -21,6 +21,10 @@ export default function() {
     return new Response(200, {}, {});
   });
 
+  this.put('/user/:id/criteriaStatus', function(schema, request) {
+    return request.requestBody;
+  });
+
   this.get('/gatekeeper/v1/accounts/me', function(schema) {
     return schema.accounts.find(1);
   });
