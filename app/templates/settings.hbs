@@ -5,11 +5,20 @@
     <span>Location</span>
     {{input placeholder="Indianapolis, IN"}}
   </div> --}}
-  
+    
   <div class="settings-row">
     <div class="slider-row">
       <span>Max Distance</span>
       {{range-slider step=10 start=startDistance range=distanceRange on-change=(action "settingChanged" "maxDistance")}}
+    </div>
+  </div>
+
+  <span class="divider"></span>
+
+  <div class="settings-row">
+    <div class="slider-row">
+      <span>Age Range</span>
+      {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
     </div>
   </div>
 
@@ -48,15 +57,6 @@
         <option>Yes</option>
         <option>No</option>
       </select>
-    </div>
-  </div>
-
-  <span class="divider"></span>
-
-  <div class="settings-row">
-    <div class="slider-row">
-      <span>Age Range</span>
-      {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
     </div>
   </div>
 

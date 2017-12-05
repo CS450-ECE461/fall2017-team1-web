@@ -9,13 +9,15 @@
     margin-top: 16px;
   }
   .settings-row {
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-style: solid;
-    border-radius: 40px;
-    margin: 8%;
-    background-color: $clr-secondary-white;
+    .slider-row {
+      padding-bottom: 5%;
+      padding-left: 5%;
+      padding-right: 5%;
+      border-style: solid;
+      border-radius: 40px;
+      margin: 8%;
+      background-color: $clr-secondary-white;
+    }
     span{
       display: flex;
       justify-content: center;
