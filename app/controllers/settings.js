@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 export default Controller.extend({
   storage: service('local-storage'),
+  userService: service('user'),
 
   ageRange: {
     min: 18,
@@ -21,10 +22,13 @@ export default Controller.extend({
 
   actions: {
     signOut() {
-      this.get('storage').clear();
       this.get('gatekeeper').signOut().then(() => {
+        this.get('storage').clear();
+        this.set('userService.currentUser', null);
         this.replaceRoute('login');
       }).catch(() => {
+        this.get('storage').clear();
+        this.set('userService.currentUser', null);
         this.get('gatekeeper').forceSignOut();
         this.replaceRoute('login');
       });

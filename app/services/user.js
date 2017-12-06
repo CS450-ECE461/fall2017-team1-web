@@ -8,7 +8,7 @@ export default Service.extend({
   currentUser: null,
 
   loadUserInfo() {
-    let id = this.get('gatekeeper.currentUser.id');
+    let id = this.get('gatekeeper._currentUser.id');
 
     if (id) {
       return this.get('store').findRecord('user', id).then((user) => {

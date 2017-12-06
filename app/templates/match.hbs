@@ -81,6 +81,13 @@
           </div>
         </div>
       {{/if}}
+
+    {{else}}
+
+    <div class="match-option-container">
+      <span> No Matches : / </span>
+    </div>
+
     {{/each}}
     <button class="fa fa-chevron-right" {{action "acceptMatch"}}></button>
   </div>
