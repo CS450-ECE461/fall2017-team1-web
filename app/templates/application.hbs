@@ -5,30 +5,12 @@
         {{!-- <button class="fa fa-times close-bm" {{action burger.state.actions.close}}></button> --}}
 
         <div class="top-half">
-          {{#menu.item class="avatar-container" dismissOnClick=true}}
+          {{#menu.item class="avatar-container1" dismissOnClick=true}}
             {{#link-to 'users' currentUser.id}}
               <img class="bm-avatar" src={{currentUser.avatar}} alt="avatar">
             {{/link-to}}
           {{/menu.item}}
-          <div class="other-half">
-            <span class="username"><strong>{{currentUser.fullName}}</strong></span>
-
-            <div class="badges-friends-container">
-              <div>
-                {{#menu.item class="friends" dismissOnClick=true}}
-                  {{#link-to "friends" class="badges-friends-container-in"}}
-                    <i class="fa fa-user"></i>
-                    <span><strong>34</strong> friends</span>
-                  {{/link-to}}
-                {{/menu.item}}
-              </div>
-
-              <div class="badges-friends-container-in">
-                <i class="fa fa-certificate"></i>
-                <span><strong>16</strong> badges</span>
-              </div>
-            </div>
-          </div>
+          <span class="username"> {{currentUser.fullName}} </span>
         </div>
 
         <div class="bottom-half">
@@ -50,6 +32,7 @@
               {{#menu.item class="dog-avatar add-dog" dismissOnClick=true}}
                 {{link-to "" "settings" class="fa fa-plus"}}
               {{/menu.item}}
+              <span class="dog-name"> add dog </span>
             </div>
           </div>
         </div>
@@ -82,13 +65,13 @@
       <div class="header-bar">
         <div class="header-edge">
           <button class="menu-toggle" {{action burger.state.actions.toggle}}>
-            <img src="http://cs.iupui.edu/~jbcampbe/burger.svg" alt="open-menu">
+            <img src="assets/svg/burger.svg" alt="open-menu">
           </button>
         </div>
-        <img class="supdog-logo" src="http://cs.iupui.edu/~jbcampbe/logo.svg" alt="logo">
+        <img class="supdog-logo" src="assets/svg/logo.svg" alt="logo">
         <div class="header-edge">
           {{#link-to "messages" class="messages"}}
-            <img src="https://cs.iupui.edu/~jbcampbe/mail.svg" alt="mail-icon">
+            <img src="assets/svg/mail.svg" alt="mail-icon">
           {{/link-to}}
         </div>
       </div>
@@ -97,7 +80,7 @@
       </div>
       <div class="footer">
         {{#link-to 'match'}}
-          <img class="paw-icon" src="http://cs.iupui.edu/~jbcampbe/paw.svg" alt="paw-icon">
+          <img class="paw-icon" src="assets/svg/paw.svg" alt="paw-icon">
         {{/link-to}}
       </div>
     {{/burger.outlet}}

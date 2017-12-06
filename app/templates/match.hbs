@@ -16,25 +16,72 @@
   </div>
 {{else}}
   <div class="matching-pane">
-    <button class="fa fa-chevron-left" {{action "prevDog"}} disabled={{prevDisabled}}></button>
+    <button class="fa fa-chevron-left" {{action "declineMatch"}}></button>
     {{#each dogs as |dog index|}}
       {{#if (eq index currentDogIndex)}}
         <div class="profile-header">
-          {{#link-to 'dogs' dog.id}}
+          <div class="match-option-container">
             <img class="avatar" src={{dog.avatar}} alt="dog-avatar">
             <div class="name-container">
-              <span class="name">{{dog.fullName}}, {{dog.age}}</span>
+              <span class="name">{{dog.firstName}} {{dog.lastName}}, {{calculate-age dog.birthday}}</span>
             </div>
-            <span class="bio">
-              {{dog.bio}}
-            </span>
-          {{/link-to}}
-          <div class="match-button-container">
-            <button class="fa fa-chevron-down" {{action "triggerMatch" dog}}></button>
+            <div class="bio-container">
+              <span class="bio"> {{dog.bio}} </span>
+            </div>
+          </div>
+
+          {{#if showProfile}}
+            <div class="profile-footer profile-info">
+              <div class="info-row">
+                <div class="info-block">
+                  <span class="block-header"> Breed </span>
+                  <span class="block-body">
+                    <strong>{{dog.breed}}</strong>
+                  </span>
+                </div>
+                <div class="info-block">
+                  <span class="block-header"> Sex </span>
+                  <span class="block-body"> {{dog.gender}}/ {{dog.fixed}} </span>
+                </div>
+                {{!-- <div class="info-block">
+                  <span class="block-header"> Age </span>
+                  <span class="block-body"> {{dog.age}} years </span>
+                </div> --}}
+                <div class="info-block">
+                  <span class="block-header"> Size </span>
+                  <span class="block-body"> {{dog.size}} </span>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-block">
+                  <span class="block-header">Energy</span>
+                  {{progress-bar value=(convert-to-value dog.energy)}}
+                </div>
+
+                <div class="info-block">
+                  <span class="block-header">Playful</span>
+                  {{progress-bar value=(convert-to-value dog.playful)}}
+                </div>
+              </div>
+              <div class="vet-container">
+                <i class="fa fa-plus vet-icon"></i>
+                <span class="vet-certification">Vet Certified</span>
+              </div>
+              <div class="owner-profile-preview">
+                <img src={{dog.owner.avatar}} alt="user-avatar">
+                <div class="owner-name-container">
+                  {{dog.owner.firstName}} {{dog.owner.lastName}}
+                </div>
+              </div>
+            </div>
+          {{/if}}
+
+          <div class="toggle-profile-container {{if showProfile 'profile-open'}}">
+            <button class="fa {{if showProfile 'fa-chevron-up' 'fa-chevron-down'}}" {{action "toggleProfile"}}></button>
           </div>
         </div>
       {{/if}}
     {{/each}}
-    <button class="fa fa-chevron-right" {{action "nextDog"}} disabled={{nextDisabled}}></button>
+    <button class="fa fa-chevron-right" {{action "acceptMatch"}}></button>
   </div>
 {{/if}}

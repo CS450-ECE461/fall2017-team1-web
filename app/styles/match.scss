@@ -6,6 +6,7 @@
 
   .profile-header {
     flex: 1 1 auto;
+    overflow-y: scroll;
 
     .avatar {
       height: 310px;
@@ -17,18 +18,60 @@
   .name-container {
     display: flex;
     align-items: flex-start;
-    width: 100%;
+    width: 200px;
     padding-left: 35px;
   }
 
-  .match-button-container {
+  .bio-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .bio {
+      max-height: 100px;
+      overflow: hidden;
+    }
+  }
+
+  .owner-profile-preview {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      height: 75px;
+    }
+
+    .owner-name-container {
+      margin-top: 10px;
+      font-size: 18px;
+      color: $clr-primary-blue;
+    }
+  }
+
+  .toggle-profile-container {
     display: flex;
     flex: 1 1 auto;
-    width: 100%;
+    width: calc(100% - 40px);
     justify-content: flex-end;
     padding-right: 40px;
     align-items: flex-end;
     padding-bottom: 20px;
+
+    &.profile-open {
+      flex: 0 0 20px;
+    }
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 300px;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 

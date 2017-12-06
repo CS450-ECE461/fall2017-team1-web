@@ -9,6 +9,9 @@
         <span>{{message.message}}</span>
       </div>
     </div>
-  {{/each}} {{input placeholder="Type a Message" value=message}}
+  {{/each}}
+</div>
+<div class="message-input-container">
+  {{input placeholder="Type a Message" value=message}}
   <button {{action "sendMessage"}} disabled={{not hasMessage}}> Send </button>
 </div>

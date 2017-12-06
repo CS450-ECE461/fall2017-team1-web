@@ -1,11 +1,11 @@
 <div class="settings-container">
   <h4> Edit Your Settings </h4>
-  
+
   {{!-- <div class="settings-row">
     <span>Location</span>
     {{input placeholder="Indianapolis, IN"}}
   </div> --}}
-  
+
   <div class="settings-row">
     <div class="slider-row">
       <span>Max Distance</span>
@@ -23,7 +23,7 @@
         <option>Women</option>
         <option>Men & Women</option>
       </select>
-    </div>  
+    </div>
   </div>
 
   <span class="divider"></span>
@@ -45,8 +45,8 @@
     <div class="select-row">
       <span>Vet Verified</span>
       <select onchange={{action (action "settingChanged" "vetVerificationC") value="target.value"}}>
-        <option>Yes</option>
-        <option>No</option>
+        <option value=true>Yes</option>
+        <option value=false>No</option>
       </select>
     </div>
   </div>
@@ -84,7 +84,7 @@
     {{x-toggle theme='light'}}
   </div> --}}
   <button> Save </button>
-  
+
   <span class="divider"></span>
 
   <button {{action "signOut"}}>Sign Out</button>

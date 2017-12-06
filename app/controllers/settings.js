@@ -31,18 +31,20 @@ export default Controller.extend({
     },
 
     settingChanged(settingName, value) {
-      // console.log(settingName, 'changed to', value);
       let json = {};
-      if (settingName == 'ageRange') {
+      if (settingName === 'ageRange') {
         json = {
           'minAgeOfDog': value[0],
           'maxAgeOfDog': value[1]
         };
+      } else if (settingName === 'vetVerificationC') {
+        json[settingName] = value === 'true';
+
       } else {
         json[settingName] = value;
       }
       $.ajax({
-        url: `http://localhost:5000/user/${this.get('gatekeeper.currentUser.id')}/criteriaStatus`,
+        url: `http://localhost:5000/v1/user/${this.get('gatekeeper.currentUser.id')}/criteria`,
         type: 'PUT',
         data: json,
         headers: { Authorization: `Bearer ${this.get('gatekeeper.accessToken.access_token')}` }
