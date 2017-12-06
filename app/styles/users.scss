@@ -1,0 +1,22 @@
+@import 'variables';
+
+.badge img{
+    width: 50%;
+}
+
+
+
+.badges{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 15%;
+    margin-top: 50px;
+    padding-top: 50px;
+    color: $clr-primary-blue;
+}
+
+
+
+.badges > div{ 
+   flex: 1;
+}
