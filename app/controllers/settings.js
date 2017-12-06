@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import $ from 'jquery';
+import { computed } from '@ember/object';
 
 export default Controller.extend({
   storage: service('local-storage'),
@@ -11,7 +12,9 @@ export default Controller.extend({
     max: 100
   },
 
-  ageStart: [30, 40],
+  ageStart: computed('model.minAgeOfDog', 'model.maxAgeOfDog', function() {
+    return [this.get('model.minAgeOfDog'), this.get('model.maxAgeOfDog')];
+  }),
 
   distanceRange: {
     min: 5,
