@@ -17,7 +17,7 @@ export default Model.extend({
   vetVerification: attr(),
   weight: attr(),
   energy: attr(),
-  playful: attr(),
+  playfulness: attr(),
 
   fullName: computed('firstName', 'lastName', function() {
     if (this.get('lastName') !== '') {
