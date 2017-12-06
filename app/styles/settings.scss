@@ -2,7 +2,6 @@
 
 .settings-container {
   overflow-y: scroll;//make sure the bottom bit doesn't come up
-  background-color: #a2ecf9;
   h4 {
     display: flex;
     justify-content: center;
@@ -11,8 +10,8 @@
   .settings-row {
     .slider-row {
       padding-bottom: 5%;
-      padding-left: 5%;
-      padding-right: 5%;
+      padding-left: 7%;
+      padding-right: 7%;
       border-style: solid;
       border-radius: 40px;
       margin: 8%;
@@ -20,20 +19,29 @@
     }
     span{
       display: flex;
-      justify-content: center;
       padding-top: 2%;
       padding-bottom: 1%;
+      padding-right: 20%;
       font-weight: 900;
       color: $clr-primary-blue;
     }
-    .select-row{
+    .column{
+      float: left;
       display: flex;
-      flex: 1 1 auto;
-      justify-content: center;
       flex-direction: column;
+      width: 45%;
+      padding-left: 5%;
     }
+
   }
   .divider{
     padding-top: 2.5%
+  }
+  #Save {
+    padding-left: 25%;
+    padding-right: 25%;
+    border-style: solid;
+    border-radius: 40px;
+    margin: 7.5%;
   }
 }
