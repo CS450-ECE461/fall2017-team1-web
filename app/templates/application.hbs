@@ -13,9 +13,22 @@
           <span class="username"> {{currentUser.fullName}} </span>
         </div>
 
+        <div class="my-friends">
+                <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
+                <p>4 Friends</p>
+        </div>
+
+         <div class="my-friends">
+                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+                <p>3 Badges</p>
+        </div>
+
         <div class="bottom-half">
           <div>
             <span class="my-dogs">My Dogs</span>
+          </div>
+           <div>
+              
           </div>
           <div class="dogs">
             {{#each currentUser.dog as |dog|}}
