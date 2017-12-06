@@ -1,7 +1,12 @@
 import Route from '@ember/routing/route';
+import $ from 'jquery';
 
 export default Route.extend({
   model() {
-    // return this.get('store').findAll('settings');
+    return $.ajax({
+      url: `http://localhost:5000/user/${this.get('gatekeeper.currentUser.id')}/criteria`,
+      type: 'GET',
+      headers: { Authorization: `Bearer ${this.get('gatekeeper.accessToken.access_token')}` }
+    });
   }
 });
