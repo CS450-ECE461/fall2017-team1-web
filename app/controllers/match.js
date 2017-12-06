@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { all } from 'rsvp';
+import { computed } from '@ember/object';
 import $ from 'jquery';
 
 export default Controller.extend({
@@ -8,11 +9,19 @@ export default Controller.extend({
   showProfile: false,
   dogs: [],
   currentDogIndex: 0,
+  currentDog: computed('currentDogIndex', 'dogs', function() {
+    if (this.get('currentDogIndex') < this.get('dogs.length')) {
+        return this.get('dogs')[this.get('currentDogIndex')];
+    } else {
+      return null;
+    }
+  }),
 
   actions: {
     findMatches(matchType) {
       this.set('loading', true);
       this.set('choosingFeeling', false);
+      this.set('dogs', []);
 
       $.ajax({
         url: `http://localhost:5000/v1/user/${this.get('gatekeeper.currentUser.id')}/status`,
@@ -49,7 +58,10 @@ export default Controller.extend({
           id: this.get('dogs')[this.get('currentDogIndex')].owner.id,
           liked: true
         }
-      }).then(() => {
+      }).then((response) => {
+        if (response.matched) {
+          alert('Its a Match!!!!!');
+        }
         this.incrementProperty('currentDogIndex');
       });
     },

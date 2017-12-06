@@ -14,7 +14,7 @@ export default [
     weight: 20,
     vetVerification: true,
     energy: 'medium',
-    playful: 'high'
+    playfulness: 'high'
   },
   {
     _id: 11,
@@ -30,7 +30,7 @@ export default [
     weight: 25,
     vetVerification: true,
     energy: 'low',
-    playful: 'averge'
+    playfulness: 'averge'
   },
   {
     _id: 12,
@@ -46,6 +46,6 @@ export default [
     weight: 45,
     vetVerification: true,
     energy: 'high',
-    playful: 'high'
+    playfulness: 'high'
   }
 ];

@@ -17,16 +17,16 @@
 {{else}}
   <div class="matching-pane">
     <button class="fa fa-chevron-left" {{action "declineMatch"}}></button>
-    {{#each dogs as |dog index|}}
-      {{#if (eq index currentDogIndex)}}
+    {{#if (not (eq dogs.length 0))}}
+      {{#if currentDog}}
         <div class="profile-header">
           <div class="match-option-container">
-            <img class="avatar" src={{dog.avatar}} alt="dog-avatar">
+            <img class="avatar" src={{currentDog.avatar}} alt="dog-avatar">
             <div class="name-container">
-              <span class="name">{{dog.firstName}} {{dog.lastName}}, {{calculate-age dog.birthday}}</span>
+              <span class="name">{{currentDog.firstName}} {{currentDog.lastName}}, {{calculate-age currentDog.birthday}}</span>
             </div>
             <div class="bio-container">
-              <span class="bio"> {{dog.bio}} </span>
+              <span class="bio"> {{currentDog.bio}} </span>
             </div>
           </div>
 
@@ -36,31 +36,27 @@
                 <div class="info-block">
                   <span class="block-header"> Breed </span>
                   <span class="block-body">
-                    <strong>{{dog.breed}}</strong>
+                    <strong>{{currentDog.breed}}</strong>
                   </span>
                 </div>
                 <div class="info-block">
                   <span class="block-header"> Sex </span>
-                  <span class="block-body"> {{dog.gender}}/ {{dog.fixed}} </span>
+                  <span class="block-body"> {{currentDog.gender}}/ {{currentDog.fixed}} </span>
                 </div>
-                {{!-- <div class="info-block">
-                  <span class="block-header"> Age </span>
-                  <span class="block-body"> {{dog.age}} years </span>
-                </div> --}}
                 <div class="info-block">
                   <span class="block-header"> Size </span>
-                  <span class="block-body"> {{dog.size}} </span>
+                  <span class="block-body"> {{currentDog.size}} </span>
                 </div>
               </div>
               <div class="info-row">
                 <div class="info-block">
                   <span class="block-header">Energy</span>
-                  {{progress-bar value=(convert-to-value dog.energy)}}
+                  {{progress-bar value=(convert-to-value currentDog.energy)}}
                 </div>
 
                 <div class="info-block">
                   <span class="block-header">Playful</span>
-                  {{progress-bar value=(convert-to-value dog.playful)}}
+                  {{progress-bar value=(convert-to-value currentDog.playfulness)}}
                 </div>
               </div>
               <div class="vet-container">
@@ -68,9 +64,9 @@
                 <span class="vet-certification">Vet Certified</span>
               </div>
               <div class="owner-profile-preview">
-                <img src={{dog.owner.avatar}} alt="user-avatar">
+                <img src={{currentDog.owner.avatar}} alt="user-avatar">
                 <div class="owner-name-container">
-                  {{dog.owner.firstName}} {{dog.owner.lastName}}
+                  {{currentDog.owner.firstName}} {{currentDog.owner.lastName}}
                 </div>
               </div>
             </div>
@@ -80,15 +76,22 @@
             <button class="fa {{if showProfile 'fa-chevron-up' 'fa-chevron-down'}}" {{action "toggleProfile"}}></button>
           </div>
         </div>
+      {{else}}
+        <div class="loading-container">
+          <div class="loading">
+            <span> That's All The Matches... </span>
+          </div>
+        </div>
       {{/if}}
 
     {{else}}
+      <div class="loading-container">
+        <div class="loading">
+          <span> No Matches Were Found... : / </span>
+        </div>
+      </div>
+    {{/if}}
 
-    <div class="match-option-container">
-      <span> No Matches : / </span>
-    </div>
-
-    {{/each}}
     <button class="fa fa-chevron-right" {{action "acceptMatch"}}></button>
   </div>
 {{/if}}
