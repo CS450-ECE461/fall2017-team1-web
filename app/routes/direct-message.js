@@ -13,5 +13,14 @@ export default Route.extend({
 
       recipient: this.get('store').find('user', params.user_id)
     });
+  },
+
+  deactivate() {
+    this.get('controller').cancelFetching();
+  },
+
+  setupController() {
+    this._super(...arguments);
+    this.get('controller').beginFetching();
   }
 });

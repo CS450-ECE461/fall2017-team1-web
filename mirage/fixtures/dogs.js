@@ -14,14 +14,14 @@ export default [
     weight: 20,
     vetVerification: true,
     energy: 'medium',
-    playful: 'high'
+    playfulness: 'high'
   },
   {
     _id: 11,
     firstName: 'Henry',
     lastName: '',
     bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
-    avatar: 'https://cs.iupui.edu/~jbcampbe/default_dog_avatar.svg',
+    avatar: 'assets/svg/default_dog_avatar.svg',
     gender: 'Male',
     breed: 'Australian Shepard',
     birthday: '2015-02-24T05:00:00.000Z',
@@ -30,14 +30,14 @@ export default [
     weight: 25,
     vetVerification: true,
     energy: 'low',
-    playful: 'averge'
+    playfulness: 'averge'
   },
   {
     _id: 12,
     firstName: 'Lassy',
     lastName: '',
     bio: 'Technologies customized service unleash for. Maintain cooperative installed potentialities process-centric.',
-    avatar: 'https://cs.iupui.edu/~jbcampbe/default_dog_avatar.svg',
+    avatar: 'assets/svg/default_dog_avatar.svg',
     gender: 'Female',
     breed: 'Golden Doodle',
     birthday: '2015-02-24T05:00:00.000Z',
@@ -46,6 +46,6 @@ export default [
     weight: 45,
     vetVerification: true,
     energy: 'high',
-    playful: 'high'
+    playfulness: 'high'
   }
 ];

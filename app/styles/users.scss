@@ -1,0 +1,35 @@
+@import 'variables';
+
+.badge img{
+    width: 50%;
+}
+
+
+
+.badges{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 15%;
+    margin-top: 50px;
+    padding-top: 50px;
+    color: $clr-primary-blue;
+}
+
+
+
+.badges > div{
+   flex: 1;
+}
+
+.profile-footer{
+    color: $clr-primary-blue;
+    display: flex;
+    // display: inline;
+    // position: absolute;
+    // bottom: 20%;
+    // left: 17%;
+}
+
+.profile-footer i {
+  padding: 5px;
+}

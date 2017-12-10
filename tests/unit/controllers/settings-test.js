@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('controller:settings', 'Unit | Controller | settings', {
-  needs: ['service:local-storage']
+  needs: ['service:local-storage', 'service:user']
 });
 
 // Replace this with your real tests.

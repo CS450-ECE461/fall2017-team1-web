@@ -10,6 +10,19 @@
 @import 'messages';
 @import 'direct-message';
 @import 'settings';
+@import 'users';
+
+@font-face {
+    font-family: 'just_tell_me_whatregular';
+    src: url('just_tell_me_what_regular_version_2-webfont.woff2') format('woff2'),
+         url('just_tell_me_what_regular_version_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  outline: none;
+}
 
 .ember-burger-menu {
   .bm-content {
@@ -19,11 +32,12 @@
   .bm-menu {
     display: flex;
     flex-direction: column;
+    width: 250px !important;
+    background-color: $clr-primary-orange;
 
     .bm-menu-header {
       display: flex;
       background-color: $clr-primary-orange;
-      flex: 0 0 250px;
       flex-direction: column;
     }
 
@@ -50,20 +64,23 @@
 
     .top-half {
       display: flex;
-      flex: 0 0 50%;
+      flex: 0 0 150px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .bottom-half {
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
-      padding-left: 30px;
     }
 
     .dogs {
       display: flex;
       margin-top: 10px;
-      height: 100px;
+      flex-wrap: wrap;
+      padding-left: 20px;
     }
 
     .close-bm {
@@ -79,33 +96,29 @@
     .bm-main-menu-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 60px;
-      color: $clr-primary-orange;
+      height: 40px;
+      color: $clr-secondary-white;
       font-size: 22px;
       font-weight: 100;
+      padding-left: 50px;
 
       a {
-        color: $clr-primary-orange;
+        color: $clr-secondary-white;
         text-decoration: none;
         font-weight: 100;
       }
     }
 
     .dog-avatar {
-      height: 40px;
-      width: 40px;
+      height: 45px;
+      width: 45px;
       border-radius: 50%;
-      // background-color: gray;
     }
 
     .bm-avatar {
-      height: 65px;
-      width: 65px;
-      // background-color: gray;
+      height: 90px;
+      width: 90px;
       border-radius: 50%;
-      margin-left: 25px;
-      margin-top: 15px;
     }
 
     .badges-friends-container {
@@ -139,14 +152,31 @@
       color: $clr-secondary-white;
       font-size: 11px;
       font-weight: lighter;
-      padding-left: 10px;
+      padding-left: 50px;
+    }
+
+    .my-friends{
+      display: flex;
+      color: $clr-secondary-white;
+      font-size: 11px;
+      font-weight: lighter;
+      padding-left: 50px;
+    }
+
+    .my-friends p {
+      padding-left: 3px;
     }
 
     .dog {
-      width: 60px;
+      width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 80px;
+    }
+
+    .add-dog-container {
+      width: 200px;
     }
 
     .dog-edit {
@@ -165,13 +195,18 @@
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
-      background-color: $clr-secondary-white;
+      background-color: $clr-primary-orange;
       padding-top: 20px;
+      justify-content: flex-end;
+      padding-bottom: 40px;
     }
   }
 }
 
 body {
+  font-family: 'Source Sans Pro', sans-serif;
+  // font-family: 'just_tell_me_whatregular';
+
   > div {
     height: 100vh;
   }
@@ -264,4 +299,56 @@ button {
 
 .supdog-logo {
   height: 30px;
+}
+
+.postContainer{
+  margin-top: 10px;
+  height: 400px;
+  width: 300px;
+}
+.uploadedPic{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.uploadedPic img {
+  width: 250px;
+  height: 250px;
+}
+
+.profilePic {
+  display: inline;
+}
+
+.profilePic img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.post-name {
+  color: green;
+  font-size: 10px;
+}
+
+.post-location {
+  font-size: 9px;
+}
+
+.buddy-stream {
+  display: flex;
+  height: 600px;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.post-body-container {
+  padding-left: 20px;
+}
+
+.post-body {
+  font-size: 12px;
 }

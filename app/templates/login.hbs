@@ -1,9 +1,5 @@
-<div class="logo-container">
-  <div class="logo">
-
+<div class="login-container">
+  <div class="login-form-container">
+    {{sign-in signInComplete=(action "completeLogin")}}
   </div>
-</div>
-
-<div class="login-form-container">
-  {{gatekeeper-sign-in-vertical signInComplete=(action "signInComplete")}}
 </div>

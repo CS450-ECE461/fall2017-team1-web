@@ -65,6 +65,7 @@
     .vet-icon {
       color: $clr-primary-yellow;
       font-size: 20px;
+      width: 22px;
     }
 
     .vet-certification {
@@ -81,4 +82,16 @@
     border: 1px solid $clr-primary-yellow;
     border-radius: 3px;
   }
+}
+
+.social-icons{
+  color: $clr-primary-blue;
+  // display: inline;
+  // position: absolute;
+  // bottom: 10%;
+  // left: 17%;
+}
+
+.social-icons i {
+padding: 5px;
 }

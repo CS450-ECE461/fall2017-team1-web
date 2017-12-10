@@ -5,6 +5,7 @@ import { computed } from '@ember/object';
 
 export default Controller.extend({
   storage: service('local-storage'),
+  userService: service('user'),
 
   ageRange: {
     min: 18,
@@ -24,28 +25,33 @@ export default Controller.extend({
 
   actions: {
     signOut() {
-      this.get('storage').clear();
       this.get('gatekeeper').signOut().then(() => {
+        this.get('storage').clear();
+        this.set('userService.currentUser', null);
         this.replaceRoute('login');
       }).catch(() => {
+        this.get('storage').clear();
+        this.set('userService.currentUser', null);
         this.get('gatekeeper').forceSignOut();
         this.replaceRoute('login');
       });
     },
 
     settingChanged(settingName, value) {
-      // console.log(settingName, 'changed to', value);
       let json = {};
-      if (settingName == 'ageRange') {
+      if (settingName === 'ageRange') {
         json = {
           'minAgeOfDog': value[0],
           'maxAgeOfDog': value[1]
         };
+      } else if (settingName === 'vetVerificationC') {
+        json[settingName] = value === 'true';
+
       } else {
         json[settingName] = value;
       }
       $.ajax({
-        url: `http://localhost:5000/user/${this.get('gatekeeper.currentUser.id')}/criteriaStatus`,
+        url: `http://localhost:5000/v1/user/${this.get('gatekeeper.currentUser.id')}/criteria`,
         type: 'PUT',
         data: json,
         headers: { Authorization: `Bearer ${this.get('gatekeeper.accessToken.access_token')}` }

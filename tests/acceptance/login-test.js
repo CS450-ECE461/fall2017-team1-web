@@ -27,23 +27,7 @@ test('should not allow submission of empty username and password', function(asse
 
   andThen(function() {
     assert.equal(currentURL(), '/login', 'should have automatically redirect to login. password must have been cached');
-    assert.ok(find('.mdl-button--submit')[0].disabled);
-  });
-});
-
-test('should give response to user after failed login', function(assert) {
-  visit('/login');
-
-  andThen(function() {
-    assert.equal(currentURL(), '/login', 'should have automatically redirect to login. password must have been cached');
-  });
-
-  fillIn('.mdl-input:eq(0)', 'Not Valid');
-  fillIn('.mdl-input:eq(1)', 'Not Valid');
-
-  click('.mdl-button--submit');
-  andThen(function() {
-    assert.equal(currentURL(), '/login', 'should have stayed on login page');
+    assert.ok(find('button')[0].disabled);
   });
 });
 
@@ -54,10 +38,10 @@ test('should redirect to index route after successful login', function(assert) {
     assert.equal(currentURL(), '/login', 'should have automatically redirect to login. password must have been cached');
   });
 
-  fillIn('.mdl-input:eq(0)', 'Test User');
-  fillIn('.mdl-input:eq(1)', 'test1234');
+  fillIn('#username', 'Test User');
+  fillIn('#password', 'test1234');
 
-  click('.mdl-button--submit');
+  click('button');
   andThen(function() {
     assert.equal(currentRouteName(), 'index', 'should have been redirected to index route after login');
   });

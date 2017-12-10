@@ -38,30 +38,27 @@
       flex: 0 0 auto;
     }
 
-    // .message-bubble:before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 5px;
-    //   left: -10px;
-    //   border-top: 15px solid $clr-primary-yellow;
-    //   border-left: 15px solid transparent;
-    // }
-
     &.user-message {
         justify-content: flex-end;
 
         .message-bubble {
           justify-content: flex-end;
         }
-
-        // .message-bubble:before {
-        //   content: "";
-        //   position: absolute;
-        //   bottom: 5px;
-        //   right: -10px;
-        //   border-bottom: 15px solid $clr-primary-yellow;
-        //   border-right: 15px solid transparent;
-        // }
     }
+  }
+}
+
+.message-input-container {
+  display: flex;
+  flex: 0 0 35px;
+  padding: 10px 10px;
+  background-color: lightgray;
+
+  > input {
+    display: flex;
+    flex: 1 1 auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
   }
 }

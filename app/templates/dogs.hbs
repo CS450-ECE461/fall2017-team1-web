@@ -20,8 +20,8 @@
       <span class="block-body"> {{model.age}} years </span>
     </div>
     <div class="info-block">
-      <span class="block-header"> Weight </span>
-      <span class="block-body"> {{model.weight}} lbs </span>
+      <span class="block-header"> Size </span>
+      <span class="block-body"> {{model.size}} </span>
     </div>
   </div>
   <div class="info-row">
@@ -32,7 +32,7 @@
 
     <div class="info-block">
       <span class="block-header">Playful</span>
-      {{progress-bar value=(convert-to-value model.playful)}}
+      {{progress-bar value=(convert-to-value model.playfulness)}}
     </div>
   </div>
   <div class="vet-container">
@@ -40,3 +40,10 @@
     <span class="vet-certification">Vet Certified</span>
   </div>
 </div>
+
+{{!-- <div class="social-icons">
+    <i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-twitter-square fa-4x"  aria-hidden="true"></i>
+    <i class="fa fa-snapchat-square fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-tumblr-square fa-4x" aria-hidden="true"></i>
+</div> --}}
