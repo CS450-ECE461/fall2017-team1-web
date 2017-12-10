@@ -15,7 +15,7 @@ export default Controller.extend({
   currentDogIndex: 0,
   currentDog: computed('currentDogIndex', 'dogs', function() {
     if (this.get('currentDogIndex') < this.get('dogs.length')) {
-        return this.get('dogs')[this.get('currentDogIndex')];
+      return this.get('dogs')[this.get('currentDogIndex')];
     } else {
       return null;
     }
@@ -66,7 +66,7 @@ export default Controller.extend({
         if (response.matched) {
           this.set('matchMade', true);
 
-          later(this, () => { this.set('matchMade', false) }, 1000);
+          later(this, () => this.set('matchMade', false), 1000);
         }
         this.incrementProperty('currentDogIndex');
       });
