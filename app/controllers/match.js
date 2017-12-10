@@ -1,12 +1,16 @@
 import Controller from '@ember/controller';
 import { all } from 'rsvp';
-import { computed } from '@ember/object';
+import { later } from '@ember/runloop';
+import { computed, set } from '@ember/object';
 import $ from 'jquery';
 
 export default Controller.extend({
   choosingFeeling: true,
+
   loading: false,
   showProfile: false,
+  matchMade: false,
+
   dogs: [],
   currentDogIndex: 0,
   currentDog: computed('currentDogIndex', 'dogs', function() {
@@ -39,7 +43,7 @@ export default Controller.extend({
           all(promises).then((resolvedPromises) => {
             resolvedPromises.forEach((user) => {
               user.get('dog').forEach((dog) => {
-                dog.owner = user;
+                set(dog, 'owner', user);
                 this.get('dogs').push(dog);
               });
             });
@@ -60,7 +64,9 @@ export default Controller.extend({
         }
       }).then((response) => {
         if (response.matched) {
-          alert('Its a Match!!!!!');
+          this.set('matchMade', true);
+
+          later(this, () => { this.set('matchMade', false) }, 1000);
         }
         this.incrementProperty('currentDogIndex');
       });

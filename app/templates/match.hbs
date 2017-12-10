@@ -14,7 +14,7 @@
       <span> Searching for New Matches...! </span>
     </div>
   </div>
-{{else}}
+{{else if (not matchMade)}}
   <div class="matching-pane">
     <button class="fa fa-chevron-left" {{action "declineMatch"}}></button>
     {{#if (not (eq dogs.length 0))}}
@@ -94,4 +94,11 @@
 
     <button class="fa fa-chevron-right" {{action "acceptMatch"}}></button>
   </div>
+
+{{else}}
+<div class="loading-container">
+  <div class="loading">
+    <span> It's A Match! </span>
+  </div>
+</div>
 {{/if}}

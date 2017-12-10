@@ -39,12 +39,12 @@ export default Controller.extend({
       headers: { Authorization: `Bearer ${this.get('gatekeeper.accessToken.access_token')}` }
     }).then((response) => {
       this.set('model.conversation', response);
-      this.set('fetchTimer', later(this, this.fetchMessages, 5000));
+      this.set('fetchTimer', later(this, this.fetchMessages, 1000));
     });
   },
 
   beginFetching() {
-    // this.set('fetchTimer', later(this, this.fetchMessages, 5000));
+    this.set('fetchTimer', later(this, this.fetchMessages, 1000));
   },
 
   cancelFetching() {

@@ -17,16 +17,17 @@
 
 
 
-.badges > div{ 
+.badges > div{
    flex: 1;
 }
 
 .profile-footer{
     color: $clr-primary-blue;
-    display: inline;
-    position: absolute;
-    bottom: 20%;
-    left: 17%;
+    display: flex;
+    // display: inline;
+    // position: absolute;
+    // bottom: 20%;
+    // left: 17%;
 }
 
 .profile-footer i {
