@@ -1,6 +1,6 @@
-<div class=registration-pane >
+<div align ="center" class=registration-pane >
   <form {{action "createAccount" on="submit"}}>
-  <h2 style="color:rgb(63, 228, 220);" align ="center">User Registration</h2>
+    <h2 style="color:rgb(63, 228, 220);" align ="center">User Registration</h2>
     {{mdl-textfield type="text"
                     value=firstName
                     placeholder="First Name"
@@ -8,7 +8,6 @@
                     autocapitalize="none"
                     }}
     <br/>
-    
     {{mdl-textfield type="text"
                     value=lastName
                     placeholder="Last Name"
@@ -29,19 +28,18 @@
                     required=true
                     autocapitalize="none"
                     }}
-
-
+    <br/>
     {{#mdl-button type="submit"
                   colored=true
                   disabled=isSigningIn
                   }}
       Register
-    {{/mdl-button}}<br/><br/>
+    {{/mdl-button}}
     
-{{#link-to "login"}}
-  {{#mdl-button isRaised=true isAccent=true id="register"}}
-   Go back to login 
-  {{/mdl-button}}
-{{/link-to}}
+    {{#link-to "login"}}
+      {{#mdl-button isRaised=true colored=true isAccent=true id="register"}}
+        "Go back to login"
+      {{/mdl-button}}
+    {{/link-to}}
   </form>
 </div>

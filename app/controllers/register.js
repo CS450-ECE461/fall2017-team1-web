@@ -1,12 +1,12 @@
 import Controller from '@ember/controller';
+import Ember from 'ember';
 
 export default Controller.extend({
   ajax: Ember.inject.service(),
-
   actions:{
     createAccount() {
 
-      let{
+      let {
         email, password, firstName, lastName
       } = this.getProperties([
         'email',  'password', 'firstName', 'lastName'

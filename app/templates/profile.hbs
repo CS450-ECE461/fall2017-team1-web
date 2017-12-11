@@ -1,7 +1,5 @@
-<div align ="center">
-<h1 style="color:rgb(63, 228, 220);" align ="center">your profile</h1>
 
-</div>
+
 {{!-- <div align ="center">
 <form style="color:rgb(63, 228, 220);" action="upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload">
@@ -9,10 +7,13 @@
 </form>
 </div> --}}
 <div class=profile  align ="center" >
-    <img  src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg" width="40" height="40">
+    
 
   <form {{action "UpdateProfile" on="submit"}}>
+<h1 style="color:rgb(63, 228, 220);" align ="center">your profile</h1>
 
+    <img  src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg" width="40" height="40">
+    <br/>
 
     {{mdl-textfield type="text"
                     value=firstName
@@ -26,6 +27,7 @@
                     placeholder="Birthday"
                     required=true
                     autocapitalize="none"
+                    label="Birth day"
                     }}
     <br/>
     {{mdl-textfield type="text"
@@ -40,18 +42,68 @@
     <br/>
 <h1 style="color:rgb(63, 228, 220);" align ="center">pet profile</h1>
 
+   {{mdl-textfield type="text"
+                    value=Name
+                    placeholder="Name"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    {{mdl-textfield type="text"
+                    value=breed
+                    placeholder="breed"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    {{mdl-textfield type="number"
+                    value=age
+                    placeholder="age"
+                    required=true
+                    autocapitalize="none"
+                    pattern="[0-9]{2}"}}
+
+                     {{mdl-textfield type="text"
+                    value=age
+                    placeholder="gender"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+                   {{mdl-textfield type="text"
+                    value=fixed
+                    placeholder="fixed?"
+                    required=true
+                    autocapitalize="none"
+                    }}
+                    
+                    {{mdl-textfield type="text"
+                    value=color
+                    placeholder="color"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+                    {{mdl-textfield type="number"
+                    value=weight
+                    placeholder="weight"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+                    {{mdl-textfield type="text"
+                    value=vetCertified
+                    placeholder="vet certified?"
+                    required=true
+                    autocapitalize="none"
+                    }}
+                    
+
+<br/>
     {{#mdl-button type="submit"
-                  colored=true
                   disabled=isSigningIn}}
-                        Update
+                        Submit
     {{/mdl-button}}<br/><br/>
     
 
   </form>
+
 </div>
- <div class="settings-row">
-    <div class="slider-row">
-      <span>Age Range</span>
-      {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
-    </div>
-  </div>
