@@ -1,0 +1,47 @@
+<div class=registration-pane >
+  <form {{action "createAccount" on="submit"}}>
+  <h2 style="color:rgb(63, 228, 220);" align ="center">User Registration</h2>
+    {{mdl-textfield type="text"
+                    value=firstName
+                    placeholder="First Name"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br/>
+    
+    {{mdl-textfield type="text"
+                    value=lastName
+                    placeholder="Last Name"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br/>
+    {{mdl-textfield type="email"
+                    value=email
+                    placeholder="Enter your email"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br/>
+    {{mdl-textfield type="password"
+                    value=password
+                    placeholder="Enter your password"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+
+    {{#mdl-button type="submit"
+                  colored=true
+                  disabled=isSigningIn
+                  }}
+      Register
+    {{/mdl-button}}<br/><br/>
+    
+{{#link-to "login"}}
+  {{#mdl-button isRaised=true isAccent=true id="register"}}
+   Go back to login 
+  {{/mdl-button}}
+{{/link-to}}
+  </form>
+</div>

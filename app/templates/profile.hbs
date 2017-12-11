@@ -1,0 +1,57 @@
+<div align ="center">
+<h1 style="color:rgb(63, 228, 220);" align ="center">your profile</h1>
+
+</div>
+{{!-- <div align ="center">
+<form style="color:rgb(63, 228, 220);" action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="add photo" name="submit">
+</form>
+</div> --}}
+<div class=profile  align ="center" >
+    <img  src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg" width="40" height="40">
+
+  <form {{action "UpdateProfile" on="submit"}}>
+
+
+    {{mdl-textfield type="text"
+                    value=firstName
+                    placeholder="First Name"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    <br/>
+    {{mdl-textfield type="date"
+                    value=bday
+                    placeholder="Birthday"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br/>
+    {{mdl-textfield type="text"
+                    value=zipcode
+                    placeholder="Zip Code"
+                    required=true
+                    autocapitalize="none"
+                    pattern="[0-9]{5}"}}
+
+    <br/>
+<img  src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg" width="40" height="40">
+    <br/>
+<h1 style="color:rgb(63, 228, 220);" align ="center">pet profile</h1>
+
+    {{#mdl-button type="submit"
+                  colored=true
+                  disabled=isSigningIn}}
+                        Update
+    {{/mdl-button}}<br/><br/>
+    
+
+  </form>
+</div>
+ <div class="settings-row">
+    <div class="slider-row">
+      <span>Age Range</span>
+      {{range-slider step=1 start=ageStart range=ageRange on-change=(action "settingChanged" "ageRange")}}
+    </div>
+  </div>
