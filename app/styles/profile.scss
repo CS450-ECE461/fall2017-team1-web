@@ -1,17 +1,17 @@
 @import 'variables';
-
 #slidecontainer {
   width: 100%; /* Width of the outside container */
 }
+
 
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 30%; /* Full-width */
-  height: 25px; /* Specified height */
+  height: 6px;
   border-radius: 5px;   
-  background: #d3d3d3; /* Grey background */
+  background: $clr-primary-yellow; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -27,10 +27,10 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  border-radius: 5px;   
+  height: 25px;
+  border-radius: 50%; 
   width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: rgb(178, 212, 51); /* Green background */
+  background: $clr-primary-yellow; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
@@ -38,23 +38,50 @@
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   border-radius: 5px;   
-  background: #4CAF50; /* Green background */
+  background: $clr-primary-yellow; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
 form {
-  height: 400px;
+  height:560px;
+  width: 900px;
   overflow: auto;
+  background-image:url('svg/blue_background.svg');
   
 }
 input {
-  width: 80%;
+  background:$clr-primary-blue;
+  color: $clr-primary-blue;
+  
 }
 .mdl-button{
   border: none;
-  color: white;
+  color: $clr-primary-blue;
   text-align: center;
   display: inline-block;
-  background: rgb(63, 228, 220);
+  
+  
 
+}
+// supposed to change the colors of raduo to yellow 
+input[type='radio']:after {
+ color:$clr-primary-yellow;
+  display: inline-block;
+  visibility: visible;
+}
+.mdl-textfield{
+  width:140px;
+}
+
+label{
+  padding:5px;
+	color: #555;
+  font-family:corbel,sans-serif;
+  font-size: 14px;
+  margin: 10px;
+  vertical-align:top;
+}
+span{
+  font-size: 10px;
+  color: $clr-primary-blue;
 }
