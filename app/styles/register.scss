@@ -1,13 +1,11 @@
 @import 'variables';
 
-
 .registration-pane {
-  height: 500px;
+  height: 600px;
   overflow: auto;
-  align: center
-
-
+  background-image: url('svg/blue_background.svg');
 }
+
 button {
   width: 10%;
   border-radius: 25px;
