@@ -1,89 +1,87 @@
 @import 'variables';
+
 #slidecontainer {
-  width: 100%; /* Width of the outside container */
-}
-body {
-  background-color: url('svg/blue_background.svg');
+  width: 100%;
+
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30%;
+    height: 6px;
+    border-radius: 5px;
+    background: $clr-primary-yellow;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    border-radius: 50%;
+    width: 25px;
+    background: $clr-primary-yellow;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background: $clr-primary-yellow;
+    cursor: pointer;
+  }
+
+  form {
+    height:560px;
+    width: 900px;
+    overflow: auto;
+    // background-image:url('svg/blue_background.svg');
+  }
+
+  input {
+    background:$clr-primary-blue;
+    color: $clr-primary-blue;
+  }
+
+  .mdl-button{
+    border: none;
+    color: $clr-primary-blue;
+    text-align: center;
+    display: inline-block;
+  }
+
+  input[type='radio']:after {
+    color: $clr-primary-yellow;
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .mdl-textfield{
+    width: 140px;
+  }
+
+  label {
+    padding: 5px;
+  	color: #555;
+    font-size: 14px;
+    margin: 10px;
+    vertical-align: top;
+  }
+
+  span {
+    font-size: 10px;
+    color: $clr-primary-blue;
+  }
 }
 
-/* The slider itself */
-.slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  appearance: none;
-  width: 30%; /* Full-width */
-  height: 6px;
-  border-radius: 5px;   
-  background: $clr-primary-yellow; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-}
-
-/* Mouse-over effects */
-.slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  height: 25px;
-  border-radius: 50%; 
-  width: 25px; /* Set a specific slider handle width */
-  background: $clr-primary-yellow; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  border-radius: 5px;   
-  background: $clr-primary-yellow; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-form {
-  height:560px;
-  width: 900px;
-  overflow: auto;
+.profile {
+  overflow-y: scroll;
   background-image:url('svg/blue_background.svg');
-  
-}
-input {
-  background:$clr-primary-blue;
-  color: $clr-primary-blue;
-  
-}
-.mdl-button{
-  border: none;
-  color: $clr-primary-blue;
-  text-align: center;
-  display: inline-block;
-  
-  
-
-}
-// supposed to change the colors of raduo to yellow 
-input[type='radio']:after {
- color:$clr-primary-yellow;
-  display: inline-block;
-  visibility: visible;
-}
-.mdl-textfield{
-  width:140px;
-}
-
-label{
-  padding:5px;
-	color: #555;
-  font-family:corbel,sans-serif;
-  font-size: 14px;
-  margin: 10px;
-  vertical-align:top;
-}
-span{
-  font-size: 10px;
-  color: $clr-primary-blue;
 }

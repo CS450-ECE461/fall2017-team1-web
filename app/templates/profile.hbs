@@ -1,10 +1,6 @@
-
-<div class=profile  align ="center" >
-
-
+<div class=profile  align="center">
   <form {{action "UpdateProfile" on="submit"}}>
     <span><h1 align ="center">your profile</h1></span>
-    <a href="https://imgbb.com/"><img src="https://image.ibb.co/irTUjb/user_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br><a target='_blank' rel="noopener" href='https://imgbb.com/'>upload photo link</a><br>
 
     {{mdl-textfield type="text"
                     value=firstName
@@ -37,10 +33,6 @@
                     }}
     <br>
     <span><h1 align ="center">pet profile</h1></span>
-
-    <div align="center">
-      <a href="https://imgbb.com/"><img src="https://image.ibb.co/ixQycw/pet_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br><a target='_blank' rel="noopener" href='https://imgbb.com/'>upload photo link</a><br>
-    </div>
     <br>
 
     {{mdl-textfield type="text"
@@ -138,12 +130,8 @@
     <br>
     <br>
 
-    {{#mdl-button type="submit"
-                  disabled=isSigningIn}}
-      'Submit'
+    {{#mdl-button type="submit" disabled=isSigningIn}}
+      Submit
     {{/mdl-button}}<br><br>
-
-
   </form>
-
 </div>

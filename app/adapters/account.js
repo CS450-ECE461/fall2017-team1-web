@@ -3,9 +3,9 @@ import { computed } from '@ember/object';
 import { isEmpty } from '@ember/utils';
 
 export default AccountAdapter.extend({
-  headers: computed ('gatekeeper.accessToken', function () {
-    let accessToken = this.get ('gatekeeper.accessToken.access_token');
-    let clientToken = this.get ('gatekeeper.client.accessToken.access_token');
+  headers: computed('gatekeeper.accessToken', function() {
+    let accessToken = this.get('gatekeeper.accessToken.access_token');
+    let clientToken = this.get('gatekeeper.client.accessToken.access_token');
 
     return { Authorization: `Bearer ${accessToken || clientToken}` };
   }),
