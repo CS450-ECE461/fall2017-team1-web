@@ -8,5 +8,5 @@ moduleForComponent('sign-in', 'Integration | Component | sign in', {
 test('it renders', function(assert) {
   this.render(hbs`{{sign-in}}`);
 
-  assert.equal(this.$().text().trim(), 'log in');
+  assert.equal(this.$().text().trim(), 'log in\nsign up');
 });

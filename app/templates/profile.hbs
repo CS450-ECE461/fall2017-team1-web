@@ -1,0 +1,137 @@
+<div class=profile  align="center">
+  <form {{action "UpdateProfile" on="submit"}}>
+    <span><h1 align ="center">your profile</h1></span>
+
+    {{mdl-textfield type="text"
+                    value=firstName
+                    placeholder="First Name"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    <br>
+    {{mdl-textfield type="date"
+                    label="Birth Day"
+                    color=blue
+                    value=birthday
+                    placeholder="Birthday"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br>
+    {{mdl-textfield type="text"
+                    value=zipcode
+                    placeholder="Zip Code"
+                    required=true
+                    autocapitalize="none"
+                    pattern="[0-9]{5}"}}
+    <br>
+    {{mdl-textfield type="text"
+                    value=bio
+                    placeholder="bio"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    <br>
+    <span><h1 align ="center">pet profile</h1></span>
+    <br>
+
+    {{mdl-textfield type="text"
+                    value=Name
+                    placeholder="Name"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    {{mdl-textfield type="text"
+                    value=breed
+                    placeholder="breed"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    {{mdl-textfield type="number"
+                    value=age
+                    placeholder="age1"
+                    required=false
+                    autocapitalize="none"
+                    pattern="[0-9]{2}"}}
+
+    <br>
+    {{mdl-textfield type="text"
+                    value=gender1
+                    placeholder="gender"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+    {{mdl-textfield type="text"
+                    value=fixed
+                    placeholder="fixed?"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+    {{mdl-textfield type="text"
+                    value=color
+                    placeholder="color"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <br>
+    {{mdl-textfield type="number"
+                    value=weight
+                    placeholder="weight"
+                    required=true
+                    autocapitalize="none"
+                    }}
+
+    {{mdl-textfield type="text"
+                    value=vetCertified
+                    placeholder="vet certified?"
+                    required=true
+                    autocapitalize="none"
+                    }}
+    <span><h6 align ="center">energy level</h6></span>
+    <div id="slidecontainer">
+      <label for="myRange">low</label>
+
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      <label for="myRange">high</label>
+    </div>
+    <span><h2 align ="center">Match settings</h2></span>
+
+    <span><h6 align ="center">distance</h6></span>
+
+    <div id="slidecontainer">
+      <label for="myRange1">0</label>
+
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+      <label for="myRange1">100</label>
+      <br>
+      <label for="myRange">miles</label>
+
+
+    </div>
+    <span><h6 align ="center">age (of owner)</h6></span>
+
+    <div id="slidecontainer">
+      <label for="age">0</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="age">
+      <label for="age">100</label>
+      <br>
+      <label for="age">years</label>
+
+      <span><h6 align ="center">gender</h6></span>
+
+      <input type="radio" name="gender" value="male" id="gender"><span>Male</span>
+      <input type="radio" name="gender" value="female" id="gender"> <span>Female</span>
+      <input type="radio" name="gender" value="other" id="gender"> <span>Other</span>
+
+    </div>
+
+    <br>
+    <br>
+
+    {{#mdl-button type="submit" disabled=isSigningIn}}
+      Submit
+    {{/mdl-button}}<br><br>
+  </form>
+</div>

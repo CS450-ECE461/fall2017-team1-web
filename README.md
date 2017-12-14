@@ -1,5 +1,7 @@
 # CSCI 45000 Team-1 ui
 
+[![Build Status](https://travis-ci.org/MyPureCloud/webrtc-stats-gatherer.svg?branch=master)](https://travis-ci.org/MyPureCloud/webrtc-stats-gatherer)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

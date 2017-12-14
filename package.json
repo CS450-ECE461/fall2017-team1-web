@@ -52,6 +52,7 @@
     "ember-source": "~2.16.0",
     "ember-toggle": "^5.2.1",
     "ember-truth-helpers": "^2.0.0",
+    "ember-uploader": "^1.2.3",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "loader.js": "^4.2.3",
@@ -59,5 +60,9 @@
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
+  },
+  "dependencies": {
+    "@material/radio": "^0.27.0",
+    "getmdl-select": "^1.1.0"
   }
 }

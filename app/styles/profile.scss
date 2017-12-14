@@ -1,0 +1,87 @@
+@import 'variables';
+
+#slidecontainer {
+  width: 100%;
+
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30%;
+    height: 6px;
+    border-radius: 5px;
+    background: $clr-primary-yellow;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    border-radius: 50%;
+    width: 25px;
+    background: $clr-primary-yellow;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background: $clr-primary-yellow;
+    cursor: pointer;
+  }
+
+  form {
+    height:560px;
+    width: 900px;
+    overflow: auto;
+    // background-image:url('svg/blue_background.svg');
+  }
+
+  input {
+    background:$clr-primary-blue;
+    color: $clr-primary-blue;
+  }
+
+  .mdl-button{
+    border: none;
+    color: $clr-primary-blue;
+    text-align: center;
+    display: inline-block;
+  }
+
+  input[type='radio']:after {
+    color: $clr-primary-yellow;
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .mdl-textfield{
+    width: 140px;
+  }
+
+  label {
+    padding: 5px;
+  	color: #555;
+    font-size: 14px;
+    margin: 10px;
+    vertical-align: top;
+  }
+
+  span {
+    font-size: 10px;
+    color: $clr-primary-blue;
+  }
+}
+
+.profile {
+  overflow-y: scroll;
+  background-image:url('svg/blue_background.svg');
+}

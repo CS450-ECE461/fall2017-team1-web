@@ -1,0 +1,55 @@
+<div class="header-bar header-bar-register">
+  <img class="supdog-logo" src="assets/svg/logo.svg" alt="logo">
+</div>
+<div class="main-content">
+  <div align ="center" class=registration-pane >
+    <form {{action "createAccount" on="submit"}}>
+      <span>
+        <h2  align ="center">User Registration</h2>
+      </span>
+
+      {{mdl-textfield type="text"
+                      value=firstName
+                      placeholder="First Name"
+                      required=true
+                      autocapitalize="none"
+                      }}
+      <br>
+      {{mdl-textfield type="text"
+                      value=lastName
+                      placeholder="Last Name"
+                      required=true
+                      autocapitalize="none"
+                      }}
+      <br>
+      {{mdl-textfield type="email"
+                      value=email
+                      placeholder="Enter your email"
+                      required=true
+                      autocapitalize="none"
+                      }}
+      <br>
+      {{mdl-textfield type="password"
+                      value=password
+                      placeholder="Enter your password"
+                      required=true
+                      autocapitalize="none"
+                      }}
+      <br>
+      {{#mdl-button type="submit"
+                    colored=true
+                    disabled=isSigningIn
+                    }}
+        Register
+      {{/mdl-button}}
+
+      {{#link-to "login"}}
+        {{#mdl-button isRaised=true colored=true isAccent=true id="register"}}
+          back to login
+        {{/mdl-button}}
+      {{/link-to}}
+    </form>
+  </div>
+</div>
+<div class="footer footer-register">
+</div>
