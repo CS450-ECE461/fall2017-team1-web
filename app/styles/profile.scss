@@ -2,7 +2,9 @@
 #slidecontainer {
   width: 100%; /* Width of the outside container */
 }
-
+body {
+  background-color: url('svg/blue_background.svg');
+}
 
 /* The slider itself */
 .slider {

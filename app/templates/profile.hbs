@@ -1,17 +1,10 @@
 
-
-{{!-- <div align ="center">
-<form style="color:rgb(63, 228, 220);" action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="add photo" name="submit">
-</form>
-</div> --}}
 <div class=profile  align ="center" >
     
 
   <form {{action "UpdateProfile" on="submit"}}>
-<span><h1 align ="center">your profile</h1></span>
-<a href="https://imgbb.com/"><img src="https://image.ibb.co/irTUjb/user_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>upload photo link</a><br />    
+    <span><h1 align ="center">your profile</h1></span>
+    <a href="https://imgbb.com/"><img src="https://image.ibb.co/irTUjb/user_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br><a target='_blank' rel="noopener" href='https://imgbb.com/'>upload photo link</a><br>    
 
     {{mdl-textfield type="text"
                     value=firstName
@@ -19,34 +12,38 @@
                     required=false
                     autocapitalize="none"
                     }}
-    <br/>
+    <br>
     {{mdl-textfield type="date"
                     label="Birth Day"
                     color=blue
-                    value=bday
+                    value=birthday
                     placeholder="Birthday"
                     required=true
                     autocapitalize="none"
                     }}
-    <br/>
+    <br>
     {{mdl-textfield type="text"
                     value=zipcode
                     placeholder="Zip Code"
                     required=true
                     autocapitalize="none"
                     pattern="[0-9]{5}"}}
+    <br>
+    {{mdl-textfield type="text"
+                    value=bio
+                    placeholder="bio"
+                    required=false
+                    autocapitalize="none"
+                    }}
+    <br>
+    <span><h1 align ="center">pet profile</h1></span>
 
-
-  <br/>
-<span><h1 align ="center">pet profile</h1></span>
-
-  <div align="center">
-<a href="https://imgbb.com/"><img src="https://image.ibb.co/ixQycw/pet_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>upload photo link</a><br />    
-            {{!-- {{file-upload url="/upload"}} --}}
+    <div align="center">
+      <a href="https://imgbb.com/"><img src="https://image.ibb.co/ixQycw/pet_Picture_Defult.png" alt="pet_Picture_Defult" border="0"></a><br><a target='_blank' rel="noopener" href='https://imgbb.com/'>upload photo link</a><br>    
     </div>
-    <br/>
+    <br>
 
-   {{mdl-textfield type="text"
+    {{mdl-textfield type="text"
                     value=Name
                     placeholder="Name"
                     required=false
@@ -55,95 +52,96 @@
     {{mdl-textfield type="text"
                     value=breed
                     placeholder="breed"
-                    required=true
+                    required=false
                     autocapitalize="none"
                     }}
     {{mdl-textfield type="number"
                     value=age
-                    placeholder="age"
-                    required=true
+                    placeholder="age1"
+                    required=false
                     autocapitalize="none"
                     pattern="[0-9]{2}"}}
-<br/>
-                     {{mdl-textfield type="text"
-                    value=age
+
+    <br>
+    {{mdl-textfield type="text"
+                    value=gender1
                     placeholder="gender"
                     required=true
                     autocapitalize="none"
                     }}
 
-                   {{mdl-textfield type="text"
+    {{mdl-textfield type="text"
                     value=fixed
                     placeholder="fixed?"
                     required=true
                     autocapitalize="none"
                     }}
                     
-                    {{mdl-textfield type="text"
+    {{mdl-textfield type="text"
                     value=color
                     placeholder="color"
                     required=true
                     autocapitalize="none"
                     }}
-<br/>
-                    {{mdl-textfield type="number"
+    <br>
+    {{mdl-textfield type="number"
                     value=weight
                     placeholder="weight"
                     required=true
                     autocapitalize="none"
                     }}
 
-                    {{mdl-textfield type="text"
+    {{mdl-textfield type="text"
                     value=vetCertified
                     placeholder="vet certified?"
                     required=true
                     autocapitalize="none"
                     }}
-<span><h6 align ="center">energy level</h6></span>
+    <span><h6 align ="center">energy level</h6></span>
+    <div id="slidecontainer">
+      <label for="myRange">low</label>
 
-  <div id="slidecontainer">
-            <label for="myRange">low</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      <label for="myRange">high</label>
+    </div>      
+    <span><h2 align ="center">Match settings</h2></span>
 
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <label for="myRange">high</label>
-</div>      
-  <span><h2 align ="center">Match settings</h2></span>
+    <span><h6 align ="center">distance</h6></span>
 
-  <span><h6 align ="center">distance</h6></span>
+    <div id="slidecontainer">
+      <label for="myRange1">0</label>
 
-  <div id="slidecontainer">
-        <label for="myRange1">0</label>
-
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
       <label for="myRange1">100</label>
-      <br/>
-            <label for="myRange">miles</label>
+      <br>
+      <label for="myRange">miles</label>
 
 
-</div> 
-  <span><h6 align ="center">age (of owner)</h6></span>
+    </div> 
+    <span><h6 align ="center">age (of owner)</h6></span>
 
-  <div id="slidecontainer">
-    <label for="myRange2">0</label>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
-    <label for="myRange2">100</label>
-    <br/>
-            <label for="myRange2">years</label>
+    <div id="slidecontainer">
+      <label for="age">0</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="age">
+      <label for="age">100</label>
+      <br>
+      <label for="age">years</label>
 
-  <span><h6 align ="center">gender</h6></span>
+      <span><h6 align ="center">gender</h6></span>
 
- <input type="radio" name="gender" value="male"><span>Male</span>
-  <input type="radio" name="gender" value="female"> <span>Female</span>
-  <input type="radio" name="gender" value="other"> <span>Other</span>
+      <input type="radio" name="gender" value="male" id="gender"><span>Male</span>
+      <input type="radio" name="gender" value="female" id="gender"> <span>Female</span>
+      <input type="radio" name="gender" value="other" id="gender"> <span>Other</span>
 
-</div>             
+    </div>             
                     
-<br/>
-<br/>
+    <br>
+    <br>
+  
     {{#mdl-button type="submit"
                   disabled=isSigningIn}}
-                        Submit
-    {{/mdl-button}}<br/><br/>
+      'Submit'
+    {{/mdl-button}}<br><br>
     
 
   </form>
