@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+=======
+@import 'variables';
+
+.registration-pane {
+  height: 600px;
+  overflow: auto;
+  background-image: url('svg/blue_background.svg');
+}
+
+button {
+  width: 10%;
+  border-radius: 25px;
+  height: 45px;
+  color:rgb(63, 228, 220);
+}
+
+.mdl-textfield__label {
+  text-align: center;
+  font-size: 12px;
+}
+
+.mdl-textfield {
+  padding-bottom: 5px;
+}
+
+.mdl-textfield__input {
+  border-bottom-width: 4px;
+  height: 30px;
+}
+>>>>>>> 8fd75d2fb271f3513df5a78a61912d4f66abd9d6
